@@ -21,7 +21,7 @@ class BookViewController: UIViewController {
     @objc func setupPhotoGrid() {
         let x = self.scrollView.frame.width/2
         var location = CGPoint()
-        for i in 1...11 {
+        for i in 1...10 {
             let name = String(i)
             if i%2 == 0 {
                 location = CGPoint(x: CGFloat(x), y: x*CGFloat((i-1)/2))
@@ -32,7 +32,7 @@ class BookViewController: UIViewController {
             addPicture(at: location, withName: name)
         }
         
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: CGFloat(12/2+1)*x)
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: CGFloat(Int(10/2)+1)*x)
         
         scrollView.clipsToBounds = true
     }
