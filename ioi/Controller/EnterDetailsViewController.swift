@@ -8,10 +8,40 @@
 
 import UIKit
 
-class EnterDetailsViewController: UIViewController, DateTimePickerDelegate {
+class EnterDetailsViewController: UIViewController, DateTimePickerDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
     var picker: DateTimePicker?
+    @IBOutlet var photoshootTypePickerView: UIPickerView!
+    @IBOutlet var cityPickerView: UIPickerView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.photoshootTypePickerView.delegate = self
+        self.cityPickerView.dataSource = self
+        
+        self.photoshootTypePickerView.dataSource = self
+        self.cityPickerView.delegate = self
+        
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == cityPickerView {
+            return "abc"
+        }
+        else {
+            return "xyz"
+        }
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
     @IBAction func showDateTimePicker(_ sender: Any) {
         let min = Date().addingTimeInterval(0)

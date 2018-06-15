@@ -63,10 +63,10 @@
 		9E2A92F520D3EA25007661CF /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		9E2A92F720D3EBA5007661CF /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		9E2A92F920D3FDDA007661CF /* EnterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDetailsViewController.swift; sourceTree = "<group>"; };
-		9E2A930620D43E5C007661CF /* DateTimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTimePicker.swift; path = DateTimePicker/DateTimePicker.swift; sourceTree = "<group>"; };
-		9E2A930720D43E5C007661CF /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = DateTimePicker/DateCollectionViewCell.swift; sourceTree = "<group>"; };
-		9E2A930820D43E5C007661CF /* StepCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StepCollectionViewFlowLayout.swift; path = DateTimePicker/StepCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
-		9E2A930920D43E5C007661CF /* FullDateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullDateCollectionViewCell.swift; path = DateTimePicker/FullDateCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E2A930620D43E5C007661CF /* DateTimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimePicker.swift; sourceTree = "<group>"; };
+		9E2A930720D43E5C007661CF /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E2A930820D43E5C007661CF /* StepCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		9E2A930920D43E5C007661CF /* FullDateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullDateCollectionViewCell.swift; sourceTree = "<group>"; };
 		9EB18DED20CD47BF008BD45E /* ioi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB18DF020CD47BF008BD45E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB18DF220CD47BF008BD45E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +149,10 @@
 		9E2A92FB20D4355D007661CF /* DateTimePicker */ = {
 			isa = PBXGroup;
 			children = (
+				9E2A930720D43E5C007661CF /* DateCollectionViewCell.swift */,
+				9E2A930620D43E5C007661CF /* DateTimePicker.swift */,
+				9E2A930920D43E5C007661CF /* FullDateCollectionViewCell.swift */,
+				9E2A930820D43E5C007661CF /* StepCollectionViewFlowLayout.swift */,
 			);
 			path = DateTimePicker;
 			sourceTree = "<group>";
@@ -179,10 +183,6 @@
 			isa = PBXGroup;
 			children = (
 				9E2A92FB20D4355D007661CF /* DateTimePicker */,
-				9E2A930720D43E5C007661CF /* DateCollectionViewCell.swift */,
-				9E2A930620D43E5C007661CF /* DateTimePicker.swift */,
-				9E2A930920D43E5C007661CF /* FullDateCollectionViewCell.swift */,
-				9E2A930820D43E5C007661CF /* StepCollectionViewFlowLayout.swift */,
 				9EB18E2D20CD51EE008BD45E /* Extensions */,
 				9EB18E2820CD5087008BD45E /* Model */,
 				9EB18E2520CD4FFD008BD45E /* Controller */,
