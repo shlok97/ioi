@@ -32,6 +32,8 @@ class BookViewController: UIViewController {
         }
         
         scrollView.contentSize = CGSize(width: scrollView.frame.width, height: CGFloat(12/2+1)*x)
+        
+        scrollView.clipsToBounds = true
     }
     
     func addPicture(at location: CGPoint) {
