@@ -15,9 +15,10 @@ class BookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        scrollView.frame = CGRect(x: 0, y: 30, width: self.cardView.frame.width, height: self.cardView.frame.height - 30)
-        
+        setupPhotoGrid()
+    }
+    
+    @objc func setupPhotoGrid() {
         let x = self.scrollView.frame.width/2
         var location = CGPoint()
         for i in 1...11 {
@@ -36,21 +37,12 @@ class BookViewController: UIViewController {
         scrollView.clipsToBounds = true
     }
     
-    func addPicture(at location: CGPoint) {
-        let width = self.scrollView.frame.width/2
-        if let pictureView = Bundle.main.loadNibNamed("PhotoGridPicture", owner: self)?.first as? PhotoGridPictureView {
-            let frame = CGRect(x: location.x, y: location.y, width: width, height: width)
-            pictureView.frame = frame
-            self.scrollView.addSubview(pictureView)
-        }
-    }
-    
     func addPicture(at location: CGPoint, withName name: String) {
         let width = self.scrollView.frame.width/2
         if let pictureView = Bundle.main.loadNibNamed("PhotoGridPicture", owner: self)?.first as? PhotoGridPictureView {
             let frame = CGRect(x: location.x, y: location.y, width: width, height: width)
             pictureView.frame = frame
-            pictureView.imageView.image = UIImage(named: name)
+            pictureView.imageView.image = UIImage(named: name)?.resize(toWidth: frame.width)
             self.scrollView.addSubview(pictureView)
         }
     }
