@@ -13,7 +13,7 @@ class PhotoGridPictureView: UIView {
     @IBOutlet var darkView: UIView!
     private var _isSelected = false
     
-    func toggle() {
+    @objc func toggle() {
         if _isSelected {
             _isSelected = false
         }
@@ -30,6 +30,10 @@ class PhotoGridPictureView: UIView {
     override func awakeFromNib() {
         self.clipsToBounds = true
         darkView.isHidden = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(toggle))
+        tap.numberOfTapsRequired = 1
+        self.addGestureRecognizer(tap)
     }
     
 }
