@@ -19,4 +19,5 @@ target 'ioi' do
   end
 
 pod 'Material', '~> 2.0'
+pod 'FoldingCell'
 end
