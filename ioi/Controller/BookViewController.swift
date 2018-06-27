@@ -19,30 +19,28 @@ class BookViewController: UIViewController {
     }
     
     @objc func setupPhotoGrid() {
-        let x = self.scrollView.frame.width/2
+        
+        let numberOfPicturesPerRow = 3
+        let x = self.scrollView.frame.width/CGFloat(numberOfPicturesPerRow)
         var location = CGPoint()
-        for i in 1...10 {
-            let name = String(i)
-            if i%2 == 0 {
-                location = CGPoint(x: CGFloat(x), y: x*CGFloat((i-1)/2))
-            }
-            else {
-                location = CGPoint(x: 0.0, y: x*CGFloat(i/2))
-            }
+        for i in 0...20 {
+            let name = String(i+1)
+            location = CGPoint(x: x*CGFloat(i%numberOfPicturesPerRow), y: x*CGFloat(i/numberOfPicturesPerRow))
             addPicture(at: location, withName: name)
         }
-        
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: CGFloat(Int(10/2)+1)*x)
-        
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: CGFloat(Int(21/numberOfPicturesPerRow)+1)*x)
         scrollView.clipsToBounds = true
     }
     
     func addPicture(at location: CGPoint, withName name: String) {
-        let width = self.scrollView.frame.width/2
+        let width = self.scrollView.frame.width/3
         if let pictureView = Bundle.main.loadNibNamed("PhotoGridPicture", owner: self)?.first as? PhotoGridPictureView {
             let frame = CGRect(x: location.x, y: location.y, width: width, height: width)
             pictureView.frame = frame
-            pictureView.imageView.image = UIImage(named: name)?.resize(toWidth: frame.width)
+            
+            let randomNumber = Int(arc4random_uniform(1000))
+            pictureView.imageView.downloadedFrom(link: "https://picsum.photos/200/200?image=\(randomNumber)")
+            pictureView.imageView.contentMode = .scaleAspectFill
             self.scrollView.addSubview(pictureView)
         }
     }

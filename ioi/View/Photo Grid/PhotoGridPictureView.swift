@@ -20,7 +20,13 @@ class PhotoGridPictureView: UIView {
         else {
             _isSelected = true
         }
-        darkView.isHidden = !isSelected
+        UIView.animate(withDuration: 0.3) {
+            if self.isSelected {
+                self.darkView.alpha = 0.6
+                return
+            }
+            self.darkView.alpha = 0
+        }
     }
     
     var isSelected: Bool {
@@ -29,8 +35,8 @@ class PhotoGridPictureView: UIView {
     
     override func awakeFromNib() {
         self.clipsToBounds = true
-        darkView.isHidden = true
-        
+//        darkView.isHidden = true
+        darkView.alpha = 0
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggle))
         tap.numberOfTapsRequired = 1
         self.addGestureRecognizer(tap)

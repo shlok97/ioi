@@ -13,30 +13,23 @@ class EnterDetailsViewController: UIViewController, DateTimePickerDelegate, UIPi
     
     var picker: DateTimePicker?
     @IBOutlet var photoshootTypePickerView: UIPickerView!
-    @IBOutlet var cityPickerView: UIPickerView!
+    let photoshootType = ["Wedding", "Drone Videography"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.photoshootTypePickerView.delegate = self
-        self.cityPickerView.dataSource = self
-        
         self.photoshootTypePickerView.dataSource = self
-        self.cityPickerView.delegate = self
-        
+        self.hideKeyboardWhenTappedAround()
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 3
+        return photoshootType.count
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == cityPickerView {
-            return "abc"
-        }
-        else {
-            return "xyz"
-        }
+        
+        return photoshootType[row]
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -58,7 +51,7 @@ class EnterDetailsViewController: UIViewController, DateTimePickerDelegate, UIPi
         picker.is12HourFormat = true
         picker.dateFormat = "hh:mm aa dd/MM/YYYY"
         //        picker.isTimePickerOnly = true
-        picker.includeMonth = false // if true the month shows at top
+        picker.includeMonth = true // if true the month shows at top
         picker.completionHandler = { date in
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm aa dd/MM/YYYY"

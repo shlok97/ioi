@@ -9,12 +9,13 @@
 import UIKit
 
 public protocol DateTimePickerDelegate {
-    func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date)
+    func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) 
 }
 
 @objc public class DateTimePicker: UIView {
     
     var contentHeight: CGFloat = 310
+    
     @objc public enum MinuteInterval: Int {
         case `default` = 1
         case five = 5
