@@ -370,6 +370,35 @@
             </objects>
             <point key="canvasLocation" x="2408.8000000000002" y="943.17841079460277"/>
         </scene>
+        <!--My Bookings-->
+        <scene sceneID="E02-7r-nyo">
+            <objects>
+                <tableViewController id="3Nh-ea-zcS" customClass="MyBookingsTableViewController" customModule="ioi" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oE4-G5-w4K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="362" id="8oW-BG-gNV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="362"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8oW-BG-gNV" id="fjf-cJ-6A9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="361.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3Nh-ea-zcS" id="jAw-e2-qoh"/>
+                            <outlet property="delegate" destination="3Nh-ea-zcS" id="8M2-N6-JHy"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="My Bookings" id="Wyl-51-ZgA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zFl-aR-q42" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3168.8000000000002" y="941.37931034482767"/>
+        </scene>
         <!--Book-->
         <scene sceneID="PQZ-hg-rNh">
             <objects>
@@ -984,6 +1013,7 @@
                         <segue destination="eky-OG-AxF" kind="relationship" relationship="viewControllers" id="ajs-HC-T7O"/>
                         <segue destination="OIW-By-bW1" kind="relationship" relationship="viewControllers" id="EhP-vG-bcj"/>
                         <segue destination="Uhe-2B-nAS" kind="relationship" relationship="viewControllers" id="jiR-WL-Ucq"/>
+                        <segue destination="3Nh-ea-zcS" kind="relationship" relationship="viewControllers" id="xX0-Th-Umf"/>
                         <segue destination="go1-IK-6MM" kind="relationship" relationship="viewControllers" id="1yN-rS-d4d"/>
                     </connections>
                 </tabBarController>
