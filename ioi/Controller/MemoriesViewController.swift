@@ -69,7 +69,7 @@ extension MemoriesViewController {
             NSAttributedStringKey.foregroundColor: UIColor.white,
             ])
         
-        cell.topImageView?.image = UIImage(named: villa.imageName)
+        cell.topImageView?.randomImage()
         cell.localityLabel?.attributedText = attributedLocality
         cell.countryLabel?.text = villa.country
         cell.aboutTitleLabel?.text = villa.title

@@ -27,4 +27,10 @@ extension UIImageView {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
     }
+    
+    func randomImage() {
+        let randomNumber = Int(arc4random_uniform(300) + 100)
+        downloadedFrom(link: "https://picsum.photos/400/400?image=\(randomNumber)")
+        self.contentMode = .scaleAspectFill
+    }
 }

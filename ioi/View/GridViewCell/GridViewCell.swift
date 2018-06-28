@@ -22,8 +22,7 @@ final class GridViewCell: UITableViewCell {
 
     private func iterateSubviews(of view: UIStackView) {
         for case let imageView as UIImageView in view.arrangedSubviews {
-            let imageName = String(arc4random_uniform(8) + 1)
-            imageView.image = UIImage(named: imageName)
+            imageView.randomImage()
         }
     }
 }
