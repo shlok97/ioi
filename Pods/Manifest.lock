@@ -1,4 +1,5 @@
 PODS:
+  - ElongationPreview (1.1.2)
   - FoldingCell (3.1.1)
   - Material (2.15.0):
     - Material/Core (= 2.15.0)
@@ -9,20 +10,23 @@ PODS:
   - Motion/Core (1.3.5)
 
 DEPENDENCIES:
+  - ElongationPreview (~> 1.1)
   - FoldingCell
   - Material (~> 2.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - ElongationPreview
     - FoldingCell
     - Material
     - Motion
 
 SPEC CHECKSUMS:
+  ElongationPreview: a1b53f61d2086c0ce5c2061e5233bff25b93917d
   FoldingCell: 238c33ae8d9cd655090c9c4c5ff32596cfd18c6e
   Material: 00e32bb5e61b3f749044897b2d93acd8bf33faa4
   Motion: 9f74d115d7f72bb5380a8e3cde2f8a1fc898ac36
 
-PODFILE CHECKSUM: 1ac4871f0161e5ae766742b16722d7d27bc9b607
+PODFILE CHECKSUM: b5233d2917aa73e9906aeae43bda48bea706b2e6
 
 COCOAPODS: 1.5.0
