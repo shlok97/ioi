@@ -1,18 +1,19 @@
 //
-//  MyBookingsTableViewController.swift
+//  MyRequestsTableViewController.swift
 //  ioi
 //
-//  Created by Shlok Kapoor on 28/06/18.
+//  Created by Shlok Kapoor on 29/06/18.
 //  Copyright © 2018 Shlok. All rights reserved.
 //
 
 import UIKit
 import FoldingCell
 
-class MyBookingsTableViewController: UITableViewController {
+class MyRequestsTableViewController: UITableViewController {
+
     enum Const {
         static let closeCellHeight: CGFloat = 150
-        static let openCellHeight: CGFloat = 340
+        static let openCellHeight: CGFloat = 570
         static let rowsCount = 10
     }
     
@@ -36,7 +37,7 @@ class MyBookingsTableViewController: UITableViewController {
             tableView.refreshControl?.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
         }
         
-        tableView.register(UINib(nibName: "BookingFoldingTableViewCell", bundle: nil), forCellReuseIdentifier: "bookingFoldingCell")
+        tableView.register(UINib(nibName: "RequestFoldingTableViewCell", bundle: nil), forCellReuseIdentifier: "requestFoldingCell")
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
     }
     
@@ -49,16 +50,17 @@ class MyBookingsTableViewController: UITableViewController {
             self?.tableView.reloadData()
         })
     }
+
 }
 
 // MARK:- TableView Setup
-extension MyBookingsTableViewController {
+extension MyRequestsTableViewController {
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return 10
     }
     
     override func tableView(_: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard case let cell as BookingFoldingTableViewCell = cell else {
+        guard case let cell as RequestFoldingTableViewCell = cell else {
             return
         }
         
@@ -72,7 +74,7 @@ extension MyBookingsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bookingFoldingCell", for: indexPath) as! BookingFoldingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "requestFoldingCell", for: indexPath) as! RequestFoldingTableViewCell
         let durations: [TimeInterval] = [0.26, 0.26, 0.26]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
@@ -109,3 +111,5 @@ extension MyBookingsTableViewController {
         }, completion: nil)
     }
 }
+
+
