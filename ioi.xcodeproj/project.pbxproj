@@ -15,6 +15,8 @@
 		9E2A930B20D43E5C007661CF /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A930720D43E5C007661CF /* DateCollectionViewCell.swift */; };
 		9E2A930C20D43E5C007661CF /* StepCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A930820D43E5C007661CF /* StepCollectionViewFlowLayout.swift */; };
 		9E2A930D20D43E5C007661CF /* FullDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A930920D43E5C007661CF /* FullDateCollectionViewCell.swift */; };
+		9E33804A20E5FD2800164A51 /* SecondPhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33804920E5FD2800164A51 /* SecondPhotoGridViewController.swift */; };
+		9E33804C20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33804B20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift */; };
 		9E484A8620E5081A008BC8B1 /* DemoElongationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484A8420E5081A008BC8B1 /* DemoElongationCell.swift */; };
 		9E484A8720E5081A008BC8B1 /* DemoElongationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E484A8520E5081A008BC8B1 /* DemoElongationCell.xib */; };
 		9E484A8A20E509E5008BC8B1 /* Villa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484A8920E509E5008BC8B1 /* Villa.swift */; };
@@ -85,6 +87,8 @@
 		9E2A930720D43E5C007661CF /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateCollectionViewCell.swift; sourceTree = "<group>"; };
 		9E2A930820D43E5C007661CF /* StepCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		9E2A930920D43E5C007661CF /* FullDateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullDateCollectionViewCell.swift; sourceTree = "<group>"; };
+		9E33804920E5FD2800164A51 /* SecondPhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPhotoGridViewController.swift; sourceTree = "<group>"; };
+		9E33804B20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPhotoGridTableViewCell.swift; sourceTree = "<group>"; };
 		9E484A8420E5081A008BC8B1 /* DemoElongationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoElongationCell.swift; sourceTree = "<group>"; };
 		9E484A8520E5081A008BC8B1 /* DemoElongationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoElongationCell.xib; sourceTree = "<group>"; };
 		9E484A8920E509E5008BC8B1 /* Villa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Villa.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				9E484A9D20E53CA0008BC8B1 /* BookingFoldingCell */,
 				9E484A8820E50824008BC8B1 /* DemoElongationCell */,
 				9E2A92F520D3EA25007661CF /* RequestTableViewCell.swift */,
+				9E33804B20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift */,
 				9EB892B020D64BA100B85C55 /* MemoriesTableViewCell.swift */,
 			);
 			path = TableViewCell;
@@ -199,6 +204,15 @@
 				9E2A930820D43E5C007661CF /* StepCollectionViewFlowLayout.swift */,
 			);
 			path = DateTimePicker;
+			sourceTree = "<group>";
+		};
+		9E33804820E5FCBA00164A51 /* BookAPhotographer */ = {
+			isa = PBXGroup;
+			children = (
+				9EB18E3820CE6633008BD45E /* BookViewController.swift */,
+				9E33804920E5FD2800164A51 /* SecondPhotoGridViewController.swift */,
+			);
+			path = BookAPhotographer;
 			sourceTree = "<group>";
 		};
 		9E484A8820E50824008BC8B1 /* DemoElongationCell */ = {
@@ -340,12 +354,12 @@
 		9EB18E2520CD4FFD008BD45E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9E33804820E5FCBA00164A51 /* BookAPhotographer */,
 				9EB18DF220CD47BF008BD45E /* SignUpViewController.swift */,
 				9EB18E2620CD504A008BD45E /* PickInterestsViewController.swift */,
 				9EB892AB20D645CC00B85C55 /* RequestCompleteViewController.swift */,
 				9EB892AD20D6484B00B85C55 /* MemoriesViewController.swift */,
 				9E9CCD0020E404C8009CF891 /* EventPhotosViewController.swift */,
-				9EB18E3820CE6633008BD45E /* BookViewController.swift */,
 				9E2A92F720D3EBA5007661CF /* RequestsViewController.swift */,
 				9E2A92F920D3FDDA007661CF /* EnterDetailsViewController.swift */,
 				9E484A9B20E53BB7008BC8B1 /* MyBookingsTableViewController.swift */,
@@ -621,6 +635,7 @@
 				9E484AA620E57BF0008BC8B1 /* RequestFoldingTableViewCell.swift in Sources */,
 				9EB18DF320CD47BF008BD45E /* SignUpViewController.swift in Sources */,
 				9EB892B120D64BA100B85C55 /* MemoriesTableViewCell.swift in Sources */,
+				9E33804C20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift in Sources */,
 				9EB18E2020CD4AB2008BD45E /* CardView.swift in Sources */,
 				9EB18E2C20CD50C3008BD45E /* InterestView.swift in Sources */,
 				9EB18E3120CD521F008BD45E /* UIColorExtension.swift in Sources */,
@@ -640,6 +655,7 @@
 				9EB18E2A20CD5099008BD45E /* Interests.swift in Sources */,
 				9E2A930A20D43E5C007661CF /* DateTimePicker.swift in Sources */,
 				9EB18E3920CE6633008BD45E /* BookViewController.swift in Sources */,
+				9E33804A20E5FD2800164A51 /* SecondPhotoGridViewController.swift in Sources */,
 				9E484AA020E53CE9008BC8B1 /* BookingFoldingTableViewCell.swift in Sources */,
 				9E484A8D20E50A32008BC8B1 /* LoremSwiftum.swift in Sources */,
 				9E2A92F620D3EA25007661CF /* RequestTableViewCell.swift in Sources */,

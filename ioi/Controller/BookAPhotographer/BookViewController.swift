@@ -30,6 +30,8 @@ class BookViewController: UIViewController {
         }
         scrollView.contentSize = CGSize(width: scrollView.frame.width, height: CGFloat(Int(21/numberOfPicturesPerRow)+1)*x)
         scrollView.clipsToBounds = true
+        scrollView.backgroundColor = UIColor.black
+        scrollView.showsVerticalScrollIndicator = false
     }
     
     func addPicture(at location: CGPoint, withName name: String) {
@@ -37,10 +39,7 @@ class BookViewController: UIViewController {
         if let pictureView = Bundle.main.loadNibNamed("PhotoGridPicture", owner: self)?.first as? PhotoGridPictureView {
             let frame = CGRect(x: location.x, y: location.y, width: width, height: width)
             pictureView.frame = frame
-            
-            let randomNumber = Int(arc4random_uniform(1000))
-            pictureView.imageView.downloadedFrom(link: "https://picsum.photos/200/200?image=\(randomNumber)")
-            pictureView.imageView.contentMode = .scaleAspectFill
+            pictureView.imageView.randomImage()
             self.scrollView.addSubview(pictureView)
         }
     }

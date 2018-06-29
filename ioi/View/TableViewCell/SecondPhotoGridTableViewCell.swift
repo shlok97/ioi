@@ -1,27 +1,28 @@
 //
-//  PhotoGridPictureView.swift
+//  SecondPhotoGridTableViewCell.swift
 //  ioi
 //
-//  Created by Shlok Kapoor on 11/06/18.
+//  Created by Shlok Kapoor on 29/06/18.
 //  Copyright © 2018 Shlok. All rights reserved.
 //
 
 import UIKit
+import Material
 
-class PhotoGridPictureView: UIView {
-    @IBOutlet var imageView: UIImageView!
+class SecondPhotoGridTableViewCell: TableViewCell {
     @IBOutlet var darkView: UIView!
-    private var _isSelected = false
+    @IBOutlet var photoGridImageView: UIImageView!
+    var _isShortlisted = false
     
     @objc func toggle() {
-        if _isSelected {
-            _isSelected = false
+        if _isShortlisted {
+            _isShortlisted = false
         }
         else {
-            _isSelected = true
+            _isShortlisted = true
         }
         UIView.animate(withDuration: 0.15) {
-            if self.isSelected {
+            if self.isShortlisted {
                 self.darkView.alpha = 0.7
                 return
             }
@@ -29,18 +30,17 @@ class PhotoGridPictureView: UIView {
         }
     }
     
-    var isSelected: Bool {
-        return _isSelected
+    var isShortlisted: Bool {
+        return _isShortlisted
     }
     
     override func awakeFromNib() {
         self.clipsToBounds = true
-//        darkView.isHidden = true
         darkView.alpha = 0
         darkView.backgroundColor = .clear
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggle))
-        tap.numberOfTapsRequired = 1
+        tap.numberOfTapsRequired = 2
         self.addGestureRecognizer(tap)
     }
-    
+
 }
