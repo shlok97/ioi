@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2018, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -183,13 +183,13 @@ public protocol TabBarDelegate {
 @objc(_TabBarDelegate)
 internal protocol _TabBarDelegate {
   /**
-   A delegation method that is executed when the tabItem will trigger the
-   animation to the next tab.
+   A delegation method that is executed to determine if the TabBar should
+   transition to the next tab.
    - Parameter tabBar: A TabBar.
    - Parameter tabItem: A TabItem.
+   - Returns: A Boolean.
    */
-  @objc
-  optional func _tabBar(tabBar: TabBar, willSelect tabItem: TabItem)
+  func _tabBar(tabBar: TabBar, shouldSelect tabItem: TabItem) -> Bool
 }
 
 @objc(TabBarStyle)
@@ -546,6 +546,10 @@ fileprivate extension TabBar {
       return
     }
     
+    guard !(false == _delegate?._tabBar(tabBar: self, shouldSelect: tabItem)) else {
+      return
+    }
+    
     animate(to: tabItem, isTriggeredByUserInteraction: true)
   }
 }
@@ -592,7 +596,6 @@ fileprivate extension TabBar {
    */
   func animate(to tabItem: TabItem, isTriggeredByUserInteraction: Bool, completion: ((TabItem) -> Void)? = nil) {
     if isTriggeredByUserInteraction {
-      _delegate?._tabBar?(tabBar: self, willSelect: tabItem)
       delegate?.tabBar?(tabBar: self, willSelect: tabItem)
     }
     
@@ -602,15 +605,15 @@ fileprivate extension TabBar {
                  .size(width: tabItem.bounds.width, height: lineHeight),
                  .position(x: tabItem.center.x, y: .bottom == lineAlignment ? scrollView.bounds.height - lineHeight / 2 : lineHeight / 2),
                  .completion({ [weak self, isTriggeredByUserInteraction = isTriggeredByUserInteraction, tabItem = tabItem, completion = completion] in
-                  guard let s = self else {
-                    return
-                  }
+                    guard let `self` = self else {
+                      return
+                    }
                   
-                  if isTriggeredByUserInteraction {
-                    s.delegate?.tabBar?(tabBar: s, didSelect: tabItem)
-                  }
-                  
-                  completion?(tabItem)
+                    if isTriggeredByUserInteraction {
+                      self.delegate?.tabBar?(tabBar: self, didSelect: tabItem)
+                    }
+    
+                    completion?(tabItem)
                  }))
     
     updateScrollView()

@@ -7,15 +7,53 @@
 //
 
 import UIKit
+import Segmentio
 
 class BookViewController: UIViewController {
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var cardView: CardView!
+    let photoshootTypes = ["Wedding", "Commercial", "Drone"]
+
+    @IBOutlet var photoshootTypeSegmentioView: Segmentio!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPhotoGrid()
+        setupSegmentioView()
+    }
+    
+    func setupSegmentioView() {
+        var content = [SegmentioItem]()
+        
+        let weddingItem = SegmentioItem(
+            title: "Wedding",
+            image: nil
+        )
+        let personalItem = SegmentioItem(
+            title: "Personal",
+            image: nil
+        )
+        let droneItem = SegmentioItem(
+            title: "Drone",
+            image: nil
+        )
+        content.append(weddingItem)
+        content.append(personalItem)
+        content.append(droneItem)
+        
+        photoshootTypeSegmentioView.setup(
+            content: content,
+            style: SegmentioStyle.onlyLabel,
+            options: nil
+        )
+        
+        photoshootTypeSegmentioView.selectedSegmentioIndex = 0
+        
+        photoshootTypeSegmentioView.valueDidChange = { segmentio, segmentIndex in
+            print("Selected item: ", segmentIndex)
+            self.setupPhotoGrid()
+        }
     }
     
     @objc func setupPhotoGrid() {

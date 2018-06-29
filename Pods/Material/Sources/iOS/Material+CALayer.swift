@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2018, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -268,11 +268,13 @@ extension CALayer {
     }
     
     guard .circle == shapePreset else {
+      masksToBounds = false
       cornerRadius = 0
       return
     }
     
-    cornerRadius = bounds.size.width / 2
+    masksToBounds = true
+    cornerRadius = bounds.width / 2
   }
   
   /// Sets the shadow path.

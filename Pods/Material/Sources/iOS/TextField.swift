@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 - 2017, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
+ * Copyright (C) 2015 - 2018, Daniel Dahan and CosmicMind, Inc. <http://cosmicmind.com>.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -204,6 +204,12 @@ open class TextField: UITextField {
     }
   }
   
+  open override var isSecureTextEntry: Bool {
+    didSet {
+      updateVisibilityIcon()
+    }
+  }
+  
   /// The placeholder UILabel.
   @IBInspectable
   open let placeholderLabel = UILabel()
@@ -268,7 +274,7 @@ open class TextField: UITextField {
   @IBInspectable
   open var detailVerticalOffset: CGFloat = 8 {
     didSet {
-      layoutDetailLabel()
+      layoutSubviews()
     }
   }
   
@@ -333,6 +339,20 @@ open class TextField: UITextField {
   /// A reference to the visibilityIconButton.
   open fileprivate(set) var visibilityIconButton: IconButton?
   
+  /// Icon for visibilityIconButton when in the on state.
+  open var visibilityIconOn = Icon.visibility {
+    didSet {
+      updateVisibilityIcon()
+    }
+  }
+  
+  /// Icon for visibilityIconButton when in the off state.
+  open var visibilityIconOff = Icon.visibilityOff {
+    didSet {
+      updateVisibilityIcon()
+    }
+  }
+  
   /// Enables the visibilityIconButton.
   @IBInspectable
   open var isVisibilityIconButtonEnabled: Bool {
@@ -350,10 +370,11 @@ open class TextField: UITextField {
         return
       }
       
-      visibilityIconButton = IconButton(image: isSecureTextEntry ? Icon.visibility : Icon.visibilityOff, tintColor: placeholderNormalColor.withAlphaComponent(0.54))
+      isSecureTextEntry = true
+      visibilityIconButton = IconButton(image: nil, tintColor: placeholderNormalColor.withAlphaComponent(0.54))
+      updateVisibilityIcon()
       visibilityIconButton!.contentEdgeInsetsPreset = .none
       visibilityIconButton!.pulseAnimation = .centerRadialBeyondBounds
-      isSecureTextEntry = true
       clearButtonMode = .never
       rightViewMode = .whileEditing
       rightView = visibilityIconButton
@@ -403,16 +424,11 @@ open class TextField: UITextField {
     prepare()
   }
   
-  /// A convenience initializer.
-  public convenience init() {
-    self.init(frame: .zero)
-  }
-  
   open override func layoutSubviews() {
     super.layoutSubviews()
     layoutShape()
     layoutPlaceholderLabel()
-    layoutDetailLabel()
+    layoutBottomLabel(label: detailLabel, verticalOffset: detailVerticalOffset)
     layoutButton(button: clearIconButton)
     layoutButton(button: visibilityIconButton)
     layoutDivider()
@@ -571,18 +587,9 @@ fileprivate extension TextField {
     default:break
     }
     
-    placeholderLabel.frame.origin.y = -placeholderLabel.bounds.height + placeholderVerticalOffset
+    placeholderLabel.frame.origin.y = -placeholderLabel.frame.height + placeholderVerticalOffset
   }
-  
-  /// Layout the detailLabel.
-  func layoutDetailLabel() {
-    let c = dividerContentEdgeInsets
-    detailLabel.frame.size.height = detailLabel.sizeThatFits(CGSize(width: bounds.width, height: .greatestFiniteMagnitude)).height
-    detailLabel.frame.origin.x = c.left
-    detailLabel.frame.origin.y = bounds.height + detailVerticalOffset
-    detailLabel.frame.size.width = bounds.width - c.left - c.right
-  }
-  
+
   /// Layout the a button.
   func layoutButton(button: UIButton?) {
     button?.frame = CGRect(x: bounds.width - bounds.height, y: 0, width: bounds.height, height: bounds.height)
@@ -597,6 +604,17 @@ fileprivate extension TextField {
     let w = leftViewWidth
     v.frame = CGRect(x: 0, y: 0, width: w, height: bounds.height)
     dividerContentEdgeInsets.left = w
+  }
+}
+
+internal extension TextField {
+  /// Layout given label at the bottom with the vertical offset provided.
+  func layoutBottomLabel(label: UILabel, verticalOffset: CGFloat) {
+    let c = dividerContentEdgeInsets
+    label.frame.origin.x = c.left
+    label.frame.origin.y = bounds.height + verticalOffset
+    label.frame.size.width = bounds.width - c.left - c.right
+    label.frame.size.height = label.sizeThatFits(CGSize(width: label.bounds.width, height: .greatestFiniteMagnitude)).height
   }
 }
 
@@ -642,8 +660,6 @@ fileprivate extension TextField {
   /// Handles the visibilityIconButton TouchUpInside event.
   @objc
   func handleVisibilityIconButton() {
-    isSecureTextEntry = !isSecureTextEntry
-    
     /// Workaround: Reassign text to reset cursor
     /// This is a known issue with UITextField
     /// Source: https://stackoverflow.com/questions/14220187/uitextfield-has-trailing-whitespace-after-securetextentry-toggle
@@ -660,11 +676,7 @@ fileprivate extension TextField {
           return
         }
         
-        guard let v = self.visibilityIconButton else {
-          return
-        }
-        
-        v.image = self.isSecureTextEntry ? Icon.visibilityOff?.tint(with: v.tintColor.withAlphaComponent(0.54)) : Icon.visibility?.tint(with: v.tintColor.withAlphaComponent(0.54))
+        self.isSecureTextEntry = !self.isSecureTextEntry
     })
   }
 }
@@ -759,5 +771,12 @@ extension TextField {
       self.placeholderLabel.frame.origin.x = self.leftViewWidth + self.textInset
       self.placeholderLabel.frame.origin.y = 0
     })
+  }
+}
+
+private extension TextField {
+  /// Updates visibilityIconButton image based on isSecureTextEntry value.
+  func updateVisibilityIcon() {
+    visibilityIconButton?.image = isSecureTextEntry ? visibilityIconOff : visibilityIconOn
   }
 }
