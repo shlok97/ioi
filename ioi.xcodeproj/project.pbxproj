@@ -25,6 +25,9 @@
 		9E484A9C20E53BB7008BC8B1 /* MyBookingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484A9B20E53BB7008BC8B1 /* MyBookingsTableViewController.swift */; };
 		9E484AA020E53CE9008BC8B1 /* BookingFoldingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484A9E20E53CE9008BC8B1 /* BookingFoldingTableViewCell.swift */; };
 		9E484AA120E53CE9008BC8B1 /* BookingFoldingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E484A9F20E53CE9008BC8B1 /* BookingFoldingTableViewCell.xib */; };
+		9E484AA520E57BF0008BC8B1 /* RequestFoldingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E484AA320E57BF0008BC8B1 /* RequestFoldingTableViewCell.xib */; };
+		9E484AA620E57BF0008BC8B1 /* RequestFoldingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484AA420E57BF0008BC8B1 /* RequestFoldingTableViewCell.swift */; };
+		9E484AA820E58BEC008BC8B1 /* MyRequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484AA720E58BEC008BC8B1 /* MyRequestsTableViewController.swift */; };
 		9E9CCD0120E404C8009CF891 /* EventPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9CCD0020E404C8009CF891 /* EventPhotosViewController.swift */; };
 		9EB18DF120CD47BF008BD45E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB18DF020CD47BF008BD45E /* AppDelegate.swift */; };
 		9EB18DF320CD47BF008BD45E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB18DF220CD47BF008BD45E /* SignUpViewController.swift */; };
@@ -95,6 +98,9 @@
 		9E484A9B20E53BB7008BC8B1 /* MyBookingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookingsTableViewController.swift; sourceTree = "<group>"; };
 		9E484A9E20E53CE9008BC8B1 /* BookingFoldingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingFoldingTableViewCell.swift; sourceTree = "<group>"; };
 		9E484A9F20E53CE9008BC8B1 /* BookingFoldingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookingFoldingTableViewCell.xib; sourceTree = "<group>"; };
+		9E484AA320E57BF0008BC8B1 /* RequestFoldingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestFoldingTableViewCell.xib; sourceTree = "<group>"; };
+		9E484AA420E57BF0008BC8B1 /* RequestFoldingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFoldingTableViewCell.swift; sourceTree = "<group>"; };
+		9E484AA720E58BEC008BC8B1 /* MyRequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestsTableViewController.swift; sourceTree = "<group>"; };
 		9E9CCD0020E404C8009CF891 /* EventPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPhotosViewController.swift; sourceTree = "<group>"; };
 		9EB18DED20CD47BF008BD45E /* ioi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB18DF020CD47BF008BD45E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		9E2A92F420D3E9FB007661CF /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				9E484AA220E57BBC008BC8B1 /* RequestFoldingCell */,
 				9E484A9D20E53CA0008BC8B1 /* BookingFoldingCell */,
 				9E484A8820E50824008BC8B1 /* DemoElongationCell */,
 				9E2A92F520D3EA25007661CF /* RequestTableViewCell.swift */,
@@ -245,6 +252,15 @@
 				9E484A9F20E53CE9008BC8B1 /* BookingFoldingTableViewCell.xib */,
 			);
 			path = BookingFoldingCell;
+			sourceTree = "<group>";
+		};
+		9E484AA220E57BBC008BC8B1 /* RequestFoldingCell */ = {
+			isa = PBXGroup;
+			children = (
+				9E484AA420E57BF0008BC8B1 /* RequestFoldingTableViewCell.swift */,
+				9E484AA320E57BF0008BC8B1 /* RequestFoldingTableViewCell.xib */,
+			);
+			path = RequestFoldingCell;
 			sourceTree = "<group>";
 		};
 		9EB18DE420CD47BF008BD45E = {
@@ -333,6 +349,7 @@
 				9E2A92F720D3EBA5007661CF /* RequestsViewController.swift */,
 				9E2A92F920D3FDDA007661CF /* EnterDetailsViewController.swift */,
 				9E484A9B20E53BB7008BC8B1 /* MyBookingsTableViewController.swift */,
+				9E484AA720E58BEC008BC8B1 /* MyRequestsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -494,6 +511,7 @@
 				9E484AA120E53CE9008BC8B1 /* BookingFoldingTableViewCell.xib in Resources */,
 				9EB18DF620CD47BF008BD45E /* Main.storyboard in Resources */,
 				9E484A8720E5081A008BC8B1 /* DemoElongationCell.xib in Resources */,
+				9E484AA520E57BF0008BC8B1 /* RequestFoldingTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E2A92F820D3EBA5007661CF /* RequestsViewController.swift in Sources */,
+				9E484AA620E57BF0008BC8B1 /* RequestFoldingTableViewCell.swift in Sources */,
 				9EB18DF320CD47BF008BD45E /* SignUpViewController.swift in Sources */,
 				9EB892B120D64BA100B85C55 /* MemoriesTableViewCell.swift in Sources */,
 				9EB18E2020CD4AB2008BD45E /* CardView.swift in Sources */,
@@ -624,6 +643,7 @@
 				9E484AA020E53CE9008BC8B1 /* BookingFoldingTableViewCell.swift in Sources */,
 				9E484A8D20E50A32008BC8B1 /* LoremSwiftum.swift in Sources */,
 				9E2A92F620D3EA25007661CF /* RequestTableViewCell.swift in Sources */,
+				9E484AA820E58BEC008BC8B1 /* MyRequestsTableViewController.swift in Sources */,
 				9EB18E2720CD504A008BD45E /* PickInterestsViewController.swift in Sources */,
 				9E2A92FA20D3FDDA007661CF /* EnterDetailsViewController.swift in Sources */,
 				9E484A8A20E509E5008BC8B1 /* Villa.swift in Sources */,

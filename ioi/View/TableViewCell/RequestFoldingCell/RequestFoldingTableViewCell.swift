@@ -18,6 +18,8 @@ class RequestFoldingTableViewCell: FoldingCell {
     @IBOutlet var imageThree: UIImageView!
     @IBOutlet var imageFour: UIImageView!
     
+    var images: [UIImageView] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,10 +29,17 @@ class RequestFoldingTableViewCell: FoldingCell {
         containerView.layer.cornerRadius = 10
         containerView.clipsToBounds = true
         
-        imageOne.randomImage()
-        imageTwo.randomImage()
-        imageThree.randomImage()
-        imageFour.randomImage()
+        images = [imageOne, imageTwo, imageThree, imageFour]
+        
+//        imageOne.randomImage()
+//        imageTwo.randomImage()
+//        imageThree.randomImage()
+//        imageFour.randomImage()
+        
+        for image in images {
+            image.randomImage()
+            image.clipsToBounds = true
+        }
         
         photographerImage.randomImage()
         
