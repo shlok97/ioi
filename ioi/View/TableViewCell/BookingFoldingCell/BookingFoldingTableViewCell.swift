@@ -22,7 +22,7 @@ class BookingFoldingTableViewCell: FoldingCell {
         containerView.layer.cornerRadius = 10
         containerView.clipsToBounds = true
         
-        photographerImageView.randomImage()
+        photographerImageView.randomUserImage()
         bookingImageView.randomImage()
     }
 

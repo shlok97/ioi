@@ -33,4 +33,11 @@ extension UIImageView {
         downloadedFrom(link: "https://picsum.photos/400/400?image=\(randomNumber)")
         self.contentMode = .scaleAspectFill
     }
+    func randomUserImage() {
+        self.roundCorners()
+        let randomNumber = Int(arc4random_uniform(100))
+        downloadedFrom(link: "https://randomuser.me/api/portraits/men/\(randomNumber).jpg")
+        self.contentMode = .scaleAspectFill
+        
+    }
 }

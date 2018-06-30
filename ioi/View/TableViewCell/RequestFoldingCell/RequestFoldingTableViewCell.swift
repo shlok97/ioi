@@ -59,7 +59,7 @@ class RequestFoldingTableViewCell: FoldingCell {
             image.clipsToBounds = true
         }
         
-        photographerImage.randomImage()
+        photographerImage.randomUserImage()
         setRequestStatus(status: .pending)
         
     }
