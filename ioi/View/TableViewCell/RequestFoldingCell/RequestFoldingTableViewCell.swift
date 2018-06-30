@@ -15,7 +15,7 @@ enum RequestStatus: String {
     case pending = "Pending"
     case canceled = "Canceled"
     
-    func requestViewColor() -> UIColor {
+    func color() -> UIColor {
         switch self {
         case .confirmed:
             return UIColor(hexString: "#2782C0")
@@ -80,7 +80,7 @@ class RequestFoldingTableViewCell: FoldingCell {
     func setRequestStatus(status: RequestStatus) {
         self.status = status
         self.requestStatus.text = status.rawValue
-        self.requestStatusView.backgroundColor = self.status.requestViewColor()
+        self.requestStatusView.backgroundColor = self.status.color()
         cancelRequestButton.isHidden = status == .canceled
     }
 
