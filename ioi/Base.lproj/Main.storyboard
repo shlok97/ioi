@@ -769,7 +769,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="53O-bH-uNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3145" y="-1154"/>
+            <point key="canvasLocation" x="2804" y="-1196"/>
         </scene>
         <!--Book-->
         <scene sceneID="O7M-FD-bgN">
@@ -838,21 +838,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hue-xm-iDj">
                                 <rect key="frame" x="0.0" y="8" width="375" height="449"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PICK AT LEAST 5 PICTURES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1Y-Ov-IYG">
-                                        <rect key="frame" x="0.0" y="-8" width="375" height="31"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE PHOTOSHOOT CATEGORY AND PICK YOUR FAVORITE PHOTOS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1Y-Ov-IYG">
+                                        <rect key="frame" x="0.0" y="-8" width="375" height="40"/>
                                         <color key="backgroundColor" red="0.19607843137254902" green="0.33725490196078434" blue="0.41568627450980389" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="31" id="sGQ-OX-eBr"/>
+                                            <constraint firstAttribute="height" constant="40" id="sGQ-OX-eBr"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8D-lL-8UH">
-                                        <rect key="frame" x="0.0" y="81" width="375" height="368"/>
+                                        <rect key="frame" x="0.0" y="82" width="375" height="367"/>
                                     </scrollView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcz-7f-X9J" customClass="Segmentio" customModule="Segmentio">
-                                        <rect key="frame" x="0.0" y="31" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="32" width="375" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="XkD-oM-dmu"/>
@@ -862,7 +862,7 @@
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="y8D-lL-8UH" firstAttribute="top" secondItem="xcz-7f-X9J" secondAttribute="bottom" id="0Ib-x4-q4d"/>
-                                    <constraint firstItem="xcz-7f-X9J" firstAttribute="top" secondItem="e1Y-Ov-IYG" secondAttribute="bottom" constant="8" id="EMQ-LN-1M0"/>
+                                    <constraint firstItem="xcz-7f-X9J" firstAttribute="top" secondItem="e1Y-Ov-IYG" secondAttribute="bottom" id="EMQ-LN-1M0"/>
                                     <constraint firstAttribute="bottom" secondItem="y8D-lL-8UH" secondAttribute="bottom" id="I6y-5a-HbZ"/>
                                     <constraint firstAttribute="trailing" secondItem="y8D-lL-8UH" secondAttribute="trailing" id="La8-NA-YYm"/>
                                     <constraint firstAttribute="trailing" secondItem="xcz-7f-X9J" secondAttribute="trailing" id="LhG-hX-hOP"/>

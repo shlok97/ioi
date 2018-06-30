@@ -6,3 +6,5 @@ Color Scheme:
 #EBEBEB (Silver)
 #32566A (Dark Blue)
 #125268 (Darker Blue)
+#FF9300 (Orange)
+#E9E9E9 (Background Silver)

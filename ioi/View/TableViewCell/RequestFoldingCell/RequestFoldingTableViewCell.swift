@@ -9,6 +9,11 @@
 import UIKit
 import FoldingCell
 
+enum RequestStatus: String {
+    case complete = "Complete"
+    case pending = "Pending"
+}
+
 class RequestFoldingTableViewCell: FoldingCell {
     
     @IBOutlet var photographerImage: UIImageView!
@@ -19,6 +24,10 @@ class RequestFoldingTableViewCell: FoldingCell {
     @IBOutlet var imageFour: UIImageView!
     
     var images: [UIImageView] = []
+    var status: RequestStatus = .pending
+    
+    @IBOutlet var requestStatusView: UIView!
+    @IBOutlet var requestStatus: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,18 +40,25 @@ class RequestFoldingTableViewCell: FoldingCell {
         
         images = [imageOne, imageTwo, imageThree, imageFour]
         
-//        imageOne.randomImage()
-//        imageTwo.randomImage()
-//        imageThree.randomImage()
-//        imageFour.randomImage()
-        
         for image in images {
             image.randomImage()
             image.clipsToBounds = true
         }
         
         photographerImage.randomImage()
+        setRequestStatus(status: .pending)
         
+    }
+    
+    func setRequestStatus(status: RequestStatus) {
+        self.status = status
+        self.requestStatus.text = status.rawValue
+        if status == .pending {
+            self.requestStatusView.backgroundColor = UIColor(hexString: "#FF9300")
+        }
+        else {
+            self.requestStatusView.backgroundColor = UIColor(hexString: "#2782C0")
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

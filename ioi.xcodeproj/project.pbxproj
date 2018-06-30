@@ -216,6 +216,7 @@
 				9EB18E3820CE6633008BD45E /* BookViewController.swift */,
 				9E33804920E5FD2800164A51 /* SecondPhotoGridViewController.swift */,
 				9E33805020E63B4100164A51 /* PhotoshootDetailsFormViewController.swift */,
+				9EB892AB20D645CC00B85C55 /* RequestCompleteViewController.swift */,
 			);
 			path = BookAPhotographer;
 			sourceTree = "<group>";
@@ -371,7 +372,6 @@
 				9E33804820E5FCBA00164A51 /* BookAPhotographer */,
 				9EB18DF220CD47BF008BD45E /* SignUpViewController.swift */,
 				9EB18E2620CD504A008BD45E /* PickInterestsViewController.swift */,
-				9EB892AB20D645CC00B85C55 /* RequestCompleteViewController.swift */,
 				9EB892AD20D6484B00B85C55 /* MemoriesViewController.swift */,
 				9E9CCD0020E404C8009CF891 /* EventPhotosViewController.swift */,
 				9E2A92F720D3EBA5007661CF /* RequestsViewController.swift */,

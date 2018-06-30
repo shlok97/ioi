@@ -13,7 +13,7 @@ class MyRequestsTableViewController: UITableViewController {
 
     enum Const {
         static let closeCellHeight: CGFloat = 150
-        static let openCellHeight: CGFloat = 570
+        static let openCellHeight: CGFloat = 490
         static let rowsCount = 10
     }
     
@@ -78,6 +78,11 @@ extension MyRequestsTableViewController {
         let durations: [TimeInterval] = [0.26, 0.26, 0.26]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
+        if indexPath.row < 2 {
+            cell.setRequestStatus(status: .pending)
+            return cell
+        }
+        cell.setRequestStatus(status: .complete)
         return cell
     }
     
@@ -86,6 +91,10 @@ extension MyRequestsTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row < 2 {
+            return
+        }
         
         let cell = tableView.cellForRow(at: indexPath) as! FoldingCell
         
