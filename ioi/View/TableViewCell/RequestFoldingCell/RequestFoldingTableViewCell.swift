@@ -11,8 +11,20 @@ import FoldingCell
 import EMAlertController
 
 enum RequestStatus: String {
-    case complete = "Complete"
+    case confirmed = "Confirmed"
     case pending = "Pending"
+    case canceled = "Canceled"
+    
+    func requestViewColor() -> UIColor {
+        switch self {
+        case .confirmed:
+            return UIColor(hexString: "#2782C0")
+        case .pending:
+            return UIColor(hexString: "#FF9300")
+        case .canceled:
+            return UIColor(hexString: "#FF4A35")
+        }
+    }
 }
 
 class RequestFoldingTableViewCell: FoldingCell {
@@ -27,6 +39,7 @@ class RequestFoldingTableViewCell: FoldingCell {
     var images: [UIImageView] = []
     var status: RequestStatus = .pending
     
+    @IBOutlet var cancelRequestButton: UIButton!
     @IBOutlet var requestStatusView: UIView!
     @IBOutlet var requestStatus: UILabel!
     
@@ -67,12 +80,8 @@ class RequestFoldingTableViewCell: FoldingCell {
     func setRequestStatus(status: RequestStatus) {
         self.status = status
         self.requestStatus.text = status.rawValue
-        if status == .pending {
-            self.requestStatusView.backgroundColor = UIColor(hexString: "#FF9300")
-        }
-        else {
-            self.requestStatusView.backgroundColor = UIColor(hexString: "#2782C0")
-        }
+        self.requestStatusView.backgroundColor = self.status.requestViewColor()
+        cancelRequestButton.isHidden = status == .canceled
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

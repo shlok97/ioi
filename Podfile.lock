@@ -2,6 +2,7 @@ PODS:
   - ElongationPreview (1.1.2)
   - EMAlertController (1.0.1)
   - FoldingCell (3.1.1)
+  - LGButton (1.0.5)
   - Material (2.16.0):
     - Material/Core (= 2.16.0)
   - Material/Core (2.16.0):
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - ElongationPreview (~> 1.1)
   - EMAlertController
   - FoldingCell
+  - LGButton
   - Material (~> 2.0)
   - Segmentio (~> 3.0)
 
@@ -23,6 +25,7 @@ SPEC REPOS:
     - ElongationPreview
     - EMAlertController
     - FoldingCell
+    - LGButton
     - Material
     - Motion
     - Segmentio
@@ -31,10 +34,11 @@ SPEC CHECKSUMS:
   ElongationPreview: a1b53f61d2086c0ce5c2061e5233bff25b93917d
   EMAlertController: db945aa666b737b86b0d22c9ee464e552fc63bb8
   FoldingCell: 238c33ae8d9cd655090c9c4c5ff32596cfd18c6e
+  LGButton: 707ce916eb80b73a6c4688df34bee11adbafb663
   Material: 6a85db48e092012f98704eb085852124f64b07af
   Motion: 93605fd4dffe44203b56949eb0bc73a9521af7b6
   Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
 
-PODFILE CHECKSUM: 303a936f3610b8ab0b7ad2c9e8246c03ca973846
+PODFILE CHECKSUM: 961456b5c1fa0188de0cbeb2e1f0be7c2c0b21c2
 
 COCOAPODS: 1.5.0

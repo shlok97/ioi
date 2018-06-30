@@ -23,4 +23,5 @@ pod 'FoldingCell'
 pod 'ElongationPreview', '~> 1.1'
 pod 'Segmentio', '~> 3.0'
 pod 'EMAlertController'
+pod 'LGButton'
 end

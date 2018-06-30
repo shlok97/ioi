@@ -226,21 +226,133 @@
             </objects>
             <point key="canvasLocation" x="991" y="34"/>
         </scene>
-        <!--Menu-->
-        <scene sceneID="xOX-Mz-KPg">
+        <!--Profile-->
+        <scene sceneID="JYU-uV-ifR">
             <objects>
-                <viewController id="go1-IK-6MM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0KH-6i-y0q">
+                <viewController id="9we-4d-OR1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CG4-Gg-dQq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="G2p-5j-oY8"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9J-si-STf" customClass="CardView" customModule="ioi" customModuleProvider="target">
+                                <rect key="frame" x="16" y="83" width="343" height="212"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QeC-bR-672">
+                                        <rect key="frame" x="8" y="8" width="327" height="196"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cO8-FB-o72" customClass="LGButton" customModule="LGButton">
+                                                <rect key="frame" x="0.0" y="126" width="327" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="FvP-Ay-U30"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                        <color key="value" red="1" green="0.44092497722933799" blue="0.16129176522533306" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                                        <color key="value" red="0.22077414221612779" green="0.45332153317683688" blue="0.73802347715736039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                                        <color key="value" red="0.31765803364155332" green="0.66359136523668594" blue="0.73802347715736039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="EDIT PROFILE"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.43853087973214555" green="0.29903211517729567" blue="0.73802347715736039" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OcB-fJ-eeD" customClass="LGButton" customModule="LGButton">
+                                                <rect key="frame" x="0.0" y="161" width="327" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="pJI-hl-t7s"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="LOG OUT"/>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                        <color key="value" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                                        <color key="value" red="0.20117096707539814" green="0.48502180342896539" blue="0.66225809010152292" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                                        <color key="value" red="0.11658971733908569" green="0.31511502052202378" blue="0.46335659898477155" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="gradientHorizontal" value="YES"/>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.078431372550000003" green="0.20392156859999999" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="bm3-G5-HjX"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="QeC-bR-672" firstAttribute="leading" secondItem="u9J-si-STf" secondAttribute="leading" constant="8" id="5B4-c7-f5g"/>
+                                    <constraint firstAttribute="bottom" secondItem="QeC-bR-672" secondAttribute="bottom" constant="8" id="RQ7-dB-O8h"/>
+                                    <constraint firstAttribute="height" constant="212" id="WhG-N3-kHf"/>
+                                    <constraint firstAttribute="trailing" secondItem="QeC-bR-672" secondAttribute="trailing" constant="8" id="j3c-29-GrD"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.92000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w5Q-zg-kWG" firstAttribute="trailing" secondItem="u9J-si-STf" secondAttribute="trailing" constant="16" id="DDJ-ci-ou5"/>
+                            <constraint firstItem="u9J-si-STf" firstAttribute="leading" secondItem="w5Q-zg-kWG" secondAttribute="leading" constant="16" id="XFm-FH-1qu"/>
+                            <constraint firstItem="u9J-si-STf" firstAttribute="top" secondItem="w5Q-zg-kWG" secondAttribute="top" constant="19" id="cuq-Sj-hSp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w5Q-zg-kWG"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Menu" id="pde-fV-J7z"/>
+                    <navigationItem key="navigationItem" title="Profile" id="8iH-dY-VP5"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gf6-qQ-aTg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Q5-Dw-3n7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1313" y="941"/>
+            <point key="canvasLocation" x="573.60000000000002" y="939.58020989505258"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="2ny-In-oSj">
+            <objects>
+                <navigationController id="AjX-hX-0Qb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="DHP-iC-gwb"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y5B-V2-M6U">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.078431372550000003" green="0.20392156859999999" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
+                                <color key="value" red="0.078431372549019607" green="0.20392156862745098" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9we-4d-OR1" kind="relationship" relationship="rootViewController" id="CUe-cs-Oqj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7G-4b-u3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1409" y="940"/>
         </scene>
         <!--My Requests-->
         <scene sceneID="mOr-2g-oQe">
@@ -298,7 +410,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zFl-aR-q42" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3168.8000000000002" y="941.37931034482767"/>
+            <point key="canvasLocation" x="3038" y="1023"/>
         </scene>
         <!--Book-->
         <scene sceneID="PQZ-hg-rNh">
@@ -782,7 +894,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.080322586767852686" green="0.20525478802079161" blue="0.2629119623736077" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.078431372549019607" green="0.20392156862745098" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                         </textAttributes>
@@ -1221,7 +1333,7 @@
                         <segue destination="0Zn-eI-GxB" kind="relationship" relationship="viewControllers" id="Oqc-BS-fjE"/>
                         <segue destination="3Nh-ea-zcS" kind="relationship" relationship="viewControllers" id="xX0-Th-Umf"/>
                         <segue destination="Uhe-2B-nAS" kind="relationship" relationship="viewControllers" id="jiR-WL-Ucq"/>
-                        <segue destination="go1-IK-6MM" kind="relationship" relationship="viewControllers" id="1yN-rS-d4d"/>
+                        <segue destination="AjX-hX-0Qb" kind="relationship" relationship="viewControllers" id="8OJ-kx-pQz"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uH6-70-yQX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1245,7 +1357,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OsJ-TO-Ph0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3082" y="173"/>
+            <point key="canvasLocation" x="3116" y="-450"/>
         </scene>
         <!--Event Photos View Controller-->
         <scene sceneID="zlV-E9-PWZ">
@@ -1263,7 +1375,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNZ-a8-5VO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3774" y="172"/>
+            <point key="canvasLocation" x="3804" y="-450"/>
         </scene>
     </scenes>
     <resources>

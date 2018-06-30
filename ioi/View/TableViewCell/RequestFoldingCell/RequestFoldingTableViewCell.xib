@@ -100,7 +100,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Vce-OJ-gWP"/>
                                                         </constraints>
-                                                        <state key="normal" title="DELETE">
+                                                        <state key="normal" title="CANCEL">
                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
@@ -113,7 +113,7 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.15294117647058825" green="0.50980392156862742" blue="0.75294117647058822" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.29013097426470591" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstItem="dfd-T5-o8P" firstAttribute="top" secondItem="jpE-p7-cue" secondAttribute="top" constant="8" id="D0q-Xb-l25"/>
                                             <constraint firstAttribute="bottom" secondItem="dfd-T5-o8P" secondAttribute="bottom" id="I1K-kC-uBw"/>
@@ -314,6 +314,7 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
+                <outlet property="cancelRequestButton" destination="YEF-kY-XB6" id="ZPT-gz-I8k"/>
                 <outlet property="containerView" destination="ika-r2-Dwu" id="Kj7-i8-XhN"/>
                 <outlet property="containerViewTop" destination="uen-2z-6OX" id="qLU-1M-bfI"/>
                 <outlet property="foregroundView" destination="v3V-0i-HZd" id="bBj-GG-sBX"/>

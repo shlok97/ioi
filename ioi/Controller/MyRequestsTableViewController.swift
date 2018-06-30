@@ -79,11 +79,16 @@ extension MyRequestsTableViewController {
         let durations: [TimeInterval] = [0.26, 0.26, 0.26]
         cell.durationsForExpandedState = durations
         cell.durationsForCollapsedState = durations
+        if indexPath.row < 1 {
+            cell.setRequestStatus(status: .canceled)
+            return cell
+        }
+        
         if indexPath.row < 2 {
             cell.setRequestStatus(status: .pending)
             return cell
         }
-        cell.setRequestStatus(status: .complete)
+        cell.setRequestStatus(status: .confirmed)
         return cell
     }
     
