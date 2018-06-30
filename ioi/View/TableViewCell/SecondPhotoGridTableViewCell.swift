@@ -39,7 +39,7 @@ class SecondPhotoGridTableViewCell: TableViewCell {
         darkView.alpha = 0
         darkView.backgroundColor = .clear
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggle))
-        tap.numberOfTapsRequired = 2
+        tap.numberOfTapsRequired = 1
         self.addGestureRecognizer(tap)
     }
 

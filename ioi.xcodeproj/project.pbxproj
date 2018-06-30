@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90784F42F18B03C5FBA419B0 /* Pods_ioi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9D26AE459591D61439C633 /* Pods_ioi.framework */; };
+		9E1351B820E734450094DC97 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1351B720E734450094DC97 /* UIViewExtension.swift */; };
 		9E2A92F620D3EA25007661CF /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A92F520D3EA25007661CF /* RequestTableViewCell.swift */; };
 		9E2A92F820D3EBA5007661CF /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A92F720D3EBA5007661CF /* RequestsViewController.swift */; };
 		9E2A92FA20D3FDDA007661CF /* EnterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2A92F920D3FDDA007661CF /* EnterDetailsViewController.swift */; };
@@ -82,6 +83,7 @@
 		6D8A211CBEC6AF78994DC64C /* Pods-ioi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioi.release.xcconfig"; path = "Pods/Target Support Files/Pods-ioi/Pods-ioi.release.xcconfig"; sourceTree = "<group>"; };
 		6EC578E42C93D38667D62CAB /* Pods-ioiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ioiTests/Pods-ioiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B3B5A291D4775B432D9F980 /* Pods-ioiUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioiUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ioiUITests/Pods-ioiUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9E1351B720E734450094DC97 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		9E2A92F520D3EA25007661CF /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		9E2A92F720D3EBA5007661CF /* RequestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
 		9E2A92F920D3FDDA007661CF /* EnterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDetailsViewController.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				9E484A8E20E50A83008BC8B1 /* UIFontExtention.swift */,
 				9EFFE5B820D8F62C00CC42FD /* UIViewControllerExtension.swift */,
 				9EB18E3020CD521F008BD45E /* UIColorExtension.swift */,
+				9E1351B720E734450094DC97 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ioi/Pods-ioi-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EMAlertController/EMAlertController.framework",
 				"${BUILT_PRODUCTS_DIR}/ElongationPreview/ElongationPreview.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
@@ -629,6 +633,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EMAlertController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ElongationPreview.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
@@ -679,6 +684,7 @@
 				9E484AA820E58BEC008BC8B1 /* MyRequestsTableViewController.swift in Sources */,
 				9E33804F20E6118000164A51 /* NavBar.swift in Sources */,
 				9EB18E2720CD504A008BD45E /* PickInterestsViewController.swift in Sources */,
+				9E1351B820E734450094DC97 /* UIViewExtension.swift in Sources */,
 				9E2A92FA20D3FDDA007661CF /* EnterDetailsViewController.swift in Sources */,
 				9E484A8A20E509E5008BC8B1 /* Villa.swift in Sources */,
 				9E484A9C20E53BB7008BC8B1 /* MyBookingsTableViewController.swift in Sources */,

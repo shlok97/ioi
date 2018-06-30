@@ -143,6 +143,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/EMAlertController/EMAlertController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ElongationPreview/ElongationPreview.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Material/Material.framework"
@@ -150,6 +151,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/EMAlertController/EMAlertController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ElongationPreview/ElongationPreview.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Material/Material.framework"

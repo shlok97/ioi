@@ -22,4 +22,5 @@ pod 'Material', '~> 2.0'
 pod 'FoldingCell'
 pod 'ElongationPreview', '~> 1.1'
 pod 'Segmentio', '~> 3.0'
+pod 'EMAlertController'
 end

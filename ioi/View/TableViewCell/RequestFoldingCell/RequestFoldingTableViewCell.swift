@@ -8,6 +8,7 @@
 
 import UIKit
 import FoldingCell
+import EMAlertController
 
 enum RequestStatus: String {
     case complete = "Complete"
@@ -48,6 +49,19 @@ class RequestFoldingTableViewCell: FoldingCell {
         photographerImage.randomImage()
         setRequestStatus(status: .pending)
         
+    }
+    @IBAction func cancelRequestTapped(_ sender: UIButton) {
+        let alert = EMAlertController(title: "Cancel Request", message: "Are you sure that you want to cancel the request?")
+        
+        let cancel = EMAlertAction(title: "CANCEL", style: .cancel)
+        let confirm = EMAlertAction(title: "BACK", style: .normal) {
+            // Perform Action
+        }
+        
+        alert.addAction(action: cancel)
+        alert.addAction(action: confirm)
+        alert.backgroundViewAlpha = 0.5
+        self.parentViewController?.present(alert, animated: true)
     }
     
     func setRequestStatus(status: RequestStatus) {

@@ -8,6 +8,7 @@
 
 import UIKit
 import FoldingCell
+import EMAlertController
 
 class MyRequestsTableViewController: UITableViewController {
 
@@ -90,9 +91,20 @@ extension MyRequestsTableViewController {
         return cellHeights[indexPath.row]
     }
     
+    func showPendingAlert() {
+        let alert = EMAlertController(title: "Request Pending", message: "We will notify you in an hour when we have assigned a photographer to you")
+        
+        let done = EMAlertAction(title: "DONE", style: .normal)
+        
+        alert.addAction(action: done)
+        alert.backgroundViewAlpha = 0.5
+        self.present(alert, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row < 2 {
+            showPendingAlert()
             return
         }
         

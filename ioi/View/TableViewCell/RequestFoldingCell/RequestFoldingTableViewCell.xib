@@ -103,6 +103,9 @@
                                                         <state key="normal" title="DELETE">
                                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="cancelRequestTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8ec-sD-zMh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>

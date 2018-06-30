@@ -1,5 +1,6 @@
 PODS:
   - ElongationPreview (1.1.2)
+  - EMAlertController (1.0.1)
   - FoldingCell (3.1.1)
   - Material (2.16.0):
     - Material/Core (= 2.16.0)
@@ -12,6 +13,7 @@ PODS:
 
 DEPENDENCIES:
   - ElongationPreview (~> 1.1)
+  - EMAlertController
   - FoldingCell
   - Material (~> 2.0)
   - Segmentio (~> 3.0)
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - ElongationPreview
+    - EMAlertController
     - FoldingCell
     - Material
     - Motion
@@ -26,11 +29,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   ElongationPreview: a1b53f61d2086c0ce5c2061e5233bff25b93917d
+  EMAlertController: db945aa666b737b86b0d22c9ee464e552fc63bb8
   FoldingCell: 238c33ae8d9cd655090c9c4c5ff32596cfd18c6e
   Material: 6a85db48e092012f98704eb085852124f64b07af
   Motion: 93605fd4dffe44203b56949eb0bc73a9521af7b6
   Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
 
-PODFILE CHECKSUM: 01365c3b740b1970797b153c728d524df6c1bba9
+PODFILE CHECKSUM: 303a936f3610b8ab0b7ad2c9e8246c03ca973846
 
 COCOAPODS: 1.5.0
