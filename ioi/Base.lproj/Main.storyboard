@@ -1098,7 +1098,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y8D-lL-8UH">
                                         <rect key="frame" x="0.0" y="82" width="375" height="367"/>
                                     </scrollView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcz-7f-X9J" customClass="Segmentio" customModule="Segmentio">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcz-7f-X9J" customClass="PhotoshootTypeSegmentio" customModule="ioi" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="32" width="375" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1143,7 +1143,7 @@
                                                             <action selector="donePhotoshootSelection:" destination="eky-OG-AxF" eventType="touchUpInside" id="GGJ-dl-XqI"/>
                                                         </connections>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3f-qi-AI6" customClass="Segmentio" customModule="Segmentio">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3f-qi-AI6" customClass="PhotoshootTypeSegmentioPopup" customModule="ioi" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="42" width="267" height="118"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>

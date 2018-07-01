@@ -17,8 +17,8 @@ class BookViewController: UIViewController {
     let photoshootTypes = ["Wedding", "Commercial", "Drone"]
 
     @IBOutlet var darkView: UIView!
-    @IBOutlet var photoshootTypeSegmentioView: Segmentio!
-    @IBOutlet var segmentioView: Segmentio!
+    @IBOutlet var photoshootTypeSegmentioView: PhotoshootTypeSegmentio!
+    @IBOutlet var segmentioView: PhotoshootTypeSegmentioPopup!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,63 +36,13 @@ class BookViewController: UIViewController {
     func setupOnboardingSegmentioView() {
         darkView.isHidden = false
         darkView.backgroundColor = UIColor(hexString: "#000000", alpha: 0.5)
-        
-        var content = [SegmentioItem]()
-        
-        let weddingItem = SegmentioItem(
-            title: "Wedding",
-            image: nil
-        )
-        let personalItem = SegmentioItem(
-            title: "Personal",
-            image: nil
-        )
-        let droneItem = SegmentioItem(
-            title: "Drone",
-            image: nil
-        )
-        content.append(weddingItem)
-        content.append(personalItem)
-        content.append(droneItem)
-        
-        segmentioView.setup(
-            content: content,
-            style: SegmentioStyle.onlyLabel,
-            options: nil
-        )
-        segmentioView.selectedSegmentioIndex = 0
+
         segmentioView.valueDidChange = { segmentio, segmentIndex in
             self.photoshootTypeSegmentioView.selectedSegmentioIndex = segmentIndex
         }
     }
     
     func setupSegmentioView() {
-        var content = [SegmentioItem]()
-        
-        let weddingItem = SegmentioItem(
-            title: "Wedding",
-            image: nil
-        )
-        let personalItem = SegmentioItem(
-            title: "Personal",
-            image: nil
-        )
-        let droneItem = SegmentioItem(
-            title: "Drone",
-            image: nil
-        )
-        content.append(weddingItem)
-        content.append(personalItem)
-        content.append(droneItem)
-        
-        photoshootTypeSegmentioView.setup(
-            content: content,
-            style: SegmentioStyle.onlyLabel,
-            options: nil
-        )
-        
-        photoshootTypeSegmentioView.selectedSegmentioIndex = 0
-        
         photoshootTypeSegmentioView.valueDidChange = { segmentio, segmentIndex in
             print("Selected item: ", segmentIndex)
             self.setupPhotoGrid()
