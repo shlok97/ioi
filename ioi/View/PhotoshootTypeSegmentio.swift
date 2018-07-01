@@ -14,17 +14,17 @@ class PhotoshootTypeSegmentio: Segmentio {
         return SegmentioStates(
             defaultState: SegmentioState(
                 backgroundColor: .white,
-                titleFont: UIFont.robotoFont(ofSize: CGFloat(15), weight: UIFont.FontWeight.medium),
+                titleFont: UIFont.robotoFont(ofSize: CGFloat(12), weight: UIFont.FontWeight.regular),
                 titleTextColor: .black
             ),
             selectedState: SegmentioState(
                 backgroundColor: UIColor(hexString: "#F3F3F3"),
-                titleFont: UIFont.robotoFont(ofSize: CGFloat(15), weight: UIFont.FontWeight.bold),
+                titleFont: UIFont.robotoFont(ofSize: CGFloat(12), weight: UIFont.FontWeight.bold),
                 titleTextColor: .black
             ),
             highlightedState: SegmentioState(
                 backgroundColor: UIColor(hexString: "#FAFAFA"),
-                titleFont: UIFont.robotoFont(ofSize: CGFloat(15), weight: UIFont.FontWeight.medium),
+                titleFont: UIFont.robotoFont(ofSize: CGFloat(12), weight: UIFont.FontWeight.medium),
                 titleTextColor: .black
             )
         )
@@ -34,14 +34,14 @@ class PhotoshootTypeSegmentio: Segmentio {
         let indicator = SegmentioIndicatorOptions(
             type: .bottom,
             ratio: 1,
-            height: 7,
+            height: 6,
             color: .orange
         )
         
         return SegmentioOptions(
             backgroundColor: .white,
             segmentPosition: SegmentioPosition.dynamic,
-            scrollEnabled: false,
+            scrollEnabled: true,
             indicatorOptions: indicator,
             horizontalSeparatorOptions: SegmentioHorizontalSeparatorOptions.init(),
             verticalSeparatorOptions: SegmentioVerticalSeparatorOptions.init(ratio: 1, color: UIColor.white),

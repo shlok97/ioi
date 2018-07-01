@@ -28,13 +28,13 @@ class BookViewController: UIViewController {
     }
 
     @IBAction func donePhotoshootSelection(_ sender: LGButton) {
-        UIView.animate(withDuration: 0.5) {
-            self.darkView.isHidden = true
+        UIView.animate(withDuration: 0.3) {
+            self.darkView.alpha = 0
         }
     }
     
     func setupOnboardingSegmentioView() {
-        darkView.isHidden = false
+        self.darkView.alpha = 1
         darkView.backgroundColor = UIColor(hexString: "#000000", alpha: 0.5)
 
         segmentioView.valueDidChange = { segmentio, segmentIndex in
@@ -44,7 +44,6 @@ class BookViewController: UIViewController {
     
     func setupSegmentioView() {
         photoshootTypeSegmentioView.valueDidChange = { segmentio, segmentIndex in
-            print("Selected item: ", segmentIndex)
             self.setupPhotoGrid()
         }
     }
