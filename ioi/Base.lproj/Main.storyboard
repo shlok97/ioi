@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Fz-gW-s0c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1419,21 +1419,27 @@
                                             <constraint firstAttribute="height" constant="29" id="lRd-Dh-hE5"/>
                                         </constraints>
                                         <color key="tintColor" red="0.36808821202337239" green="0.61442459982653175" blue="0.63836453045685282" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="stepperChanged:" destination="yZT-l8-t5x" eventType="valueChanged" id="Bo6-ss-Qhn"/>
+                                        </connections>
                                     </stepper>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="2 days" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aea-Cv-ysB">
-                                        <rect key="frame" x="110" y="106" width="105" height="30"/>
+                                        <rect key="frame" x="146" y="106" width="69" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cBc-he-w5R"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <action selector="changeDuration:" destination="yZT-l8-t5x" eventType="editingDidEnd" id="1l3-lC-w85"/>
+                                        </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rh-ZF-ytD">
-                                        <rect key="frame" x="26" y="106" width="76" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration (Days)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Rh-ZF-ytD">
+                                        <rect key="frame" x="26" y="106" width="112" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="MBf-wp-sZn"/>
-                                            <constraint firstAttribute="width" constant="76" id="e7j-xU-NBa"/>
+                                            <constraint firstAttribute="width" constant="112" id="e7j-xU-NBa"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="0.30720382928848267" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1546,6 +1552,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VOA-ox-Kix"/>
                     </view>
+                    <connections>
+                        <outlet property="durationStepper" destination="CRP-Dl-bLj" id="wRh-ck-aOe"/>
+                        <outlet property="durationTextField" destination="aea-Cv-ysB" id="3aC-YM-2pg"/>
+                        <outlet property="endDateLabel" destination="WyC-fp-AN3" id="trn-yw-R56"/>
+                        <outlet property="startDateLabel" destination="PXW-kG-cLF" id="SG6-hT-4Yw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLX-GS-iiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

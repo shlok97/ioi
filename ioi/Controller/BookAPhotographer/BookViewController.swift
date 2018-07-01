@@ -43,8 +43,23 @@ class BookViewController: UIViewController {
     }
     
     func setupSegmentioView() {
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showPopup))
+        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(showPopup))
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(showPopup))
+        swipe.direction = .down
+        doubleTap.numberOfTapsRequired = 2
+        
+        photoshootTypeSegmentioView.addGestureRecognizer(doubleTap)
+        photoshootTypeSegmentioView.addGestureRecognizer(swipe)
+        photoshootTypeSegmentioView.addGestureRecognizer(longPress)
         photoshootTypeSegmentioView.valueDidChange = { segmentio, segmentIndex in
             self.setupPhotoGrid()
+        }
+    }
+    
+    @objc func showPopup() {
+        UIView.animate(withDuration: 0.3) {
+            self.darkView.alpha = 1
         }
     }
     
