@@ -20,6 +20,7 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     
     var picker: DateTimePicker?
     var photoshootStartDate: Date = Date()
+    var selectedDate: Date = Date().addingTimeInterval(60 * 60 * 24 * 30)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +31,20 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
             self.photoshootStartDate = photoshootStartDate
         }
         setStartDate()
-        setEndDate()
         setupDurationStepper()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        showDatePickerOnTap()
+    }
+    
+    func showDatePickerOnTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(showDateTimePicker(_:)))
+        tap.numberOfTapsRequired = 1
+        endDateLabel.isUserInteractionEnabled = true
+        startDateLabel.isUserInteractionEnabled = true
+        endDateLabel.addGestureRecognizer(tap)
+        startDateLabel.addGestureRecognizer(tap)
     }
     
     func setupDurationStepper() {
@@ -45,6 +58,11 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     func setEndDate() {
         let photoshootEndDate: Date = photoshootStartDate.addingTimeInterval(TimeInterval(60 * 60 * 24 * (duration-1)))
         endDateLabel.text = photoshootEndDate.date
+    }
+    
+    func setStartDate() {
+        startDateLabel.text = photoshootStartDate.date
+        setEndDate()
     }
 
     @IBAction func changeDate(_ sender: Any) {
@@ -80,14 +98,21 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
 }
 
 extension PhotoshootDetailsFormViewController {
-    @IBAction func showDateTimePicker(_ sender: Any) {
+    
+    func showStartDatePicker() {
+        
+    }
+    func showEndDatePicker() {
+        
+    }
+    @objc func showDateTimePicker(_ sender: Any) {
         let min = Date().addingTimeInterval(0)
         let max = Date().addingTimeInterval(60 * 60 * 24 * 365)
         
        
         
         let picker = DateTimePicker.show(selected: Date(), minimumDate: min, maximumDate: max)
-        picker.selectedDate = Date().addingTimeInterval(60 * 60 * 24 * 30)
+        picker.selectedDate = self.selectedDate
         picker.timeInterval = DateTimePicker.MinuteInterval.thirty
         picker.highlightColor = UIColor(hexString: "#FF9300")
         picker.darkColor = UIColor.darkGray
@@ -112,13 +137,12 @@ extension PhotoshootDetailsFormViewController {
     
     func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
         photoshootStartDate = didSelectDate
+        selectedDate = photoshootStartDate
         print(photoshootStartDate.date)
         setStartDate()
     }
     
-    func setStartDate() {
-        startDateLabel.text = photoshootStartDate.date
-    }
+    
 }
 
 extension Date {
@@ -160,6 +184,9 @@ extension Date {
             date.append("rd")
         default:
             date.append("th")
+        }
+        if date.first == "0" {
+            date.remove(at: String.Index.init(encodedOffset: 0))
         }
         date.append(" \(month) \(year)")
         return date
