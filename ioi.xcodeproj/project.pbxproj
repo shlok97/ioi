@@ -21,6 +21,7 @@
 		9E33804C20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33804B20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift */; };
 		9E33804F20E6118000164A51 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33804E20E6118000164A51 /* NavBar.swift */; };
 		9E33805120E63B4100164A51 /* PhotoshootDetailsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33805020E63B4100164A51 /* PhotoshootDetailsFormViewController.swift */; };
+		9E35703920ECD6E400492A73 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35703820ECD6E400492A73 /* DateExtension.swift */; };
 		9E484A8620E5081A008BC8B1 /* DemoElongationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484A8420E5081A008BC8B1 /* DemoElongationCell.swift */; };
 		9E484A8720E5081A008BC8B1 /* DemoElongationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E484A8520E5081A008BC8B1 /* DemoElongationCell.xib */; };
 		9E484A8A20E509E5008BC8B1 /* Villa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484A8920E509E5008BC8B1 /* Villa.swift */; };
@@ -101,6 +102,7 @@
 		9E33804B20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPhotoGridTableViewCell.swift; sourceTree = "<group>"; };
 		9E33804E20E6118000164A51 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		9E33805020E63B4100164A51 /* PhotoshootDetailsFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoshootDetailsFormViewController.swift; sourceTree = "<group>"; };
+		9E35703820ECD6E400492A73 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9E484A8420E5081A008BC8B1 /* DemoElongationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoElongationCell.swift; sourceTree = "<group>"; };
 		9E484A8520E5081A008BC8B1 /* DemoElongationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoElongationCell.xib; sourceTree = "<group>"; };
 		9E484A8920E509E5008BC8B1 /* Villa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Villa.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				9EB18E3020CD521F008BD45E /* UIColorExtension.swift */,
 				9E1351B720E734450094DC97 /* UIViewExtension.swift */,
 				9EDEF0E520E7E5DD00CB824F /* UITableViewExtension.swift */,
+				9E35703820ECD6E400492A73 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				9EDEF0EA20E8002100CB824F /* PendingConfirmationViewController.swift in Sources */,
 				9E484A8F20E50A83008BC8B1 /* UIFontExtention.swift in Sources */,
 				9E2A930B20D43E5C007661CF /* DateCollectionViewCell.swift in Sources */,
+				9E35703920ECD6E400492A73 /* DateExtension.swift in Sources */,
 				9EB18DF120CD47BF008BD45E /* AppDelegate.swift in Sources */,
 				9EB18E2420CD4F97008BD45E /* InterestsScrollView.swift in Sources */,
 				9E2A930C20D43E5C007661CF /* StepCollectionViewFlowLayout.swift in Sources */,
@@ -884,6 +888,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ioi-studio.ioi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -900,6 +905,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ioi-studio.ioi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

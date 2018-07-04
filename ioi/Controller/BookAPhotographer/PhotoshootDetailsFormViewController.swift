@@ -18,18 +18,16 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     
     var duration = 1
     
-    var picker: DateTimePicker?
-    var photoshootStartDate: Date = Date()
-    var selectedDate: Date = Date().addingTimeInterval(60 * 60 * 24 * 30)
+    var picker: DateTimePicker = DateTimePicker()
+    
+    var endDatePicker: DateTimePicker = DateTimePicker()
+    var selectedStartDate: Date = Date().addingTimeInterval(60 * 60 * 24 * 30)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        showDateTimePicker(self)
+        showStartDatePicker()
         self.hideKeyboardWhenTappedAround()
-        durationTextField.text = "1"
-        if let photoshootStartDate = (picker?.selectedDate) {
-            self.photoshootStartDate = photoshootStartDate
-        }
+        setDurationTextField()
         setStartDate()
         setupDurationStepper()
     }
@@ -38,13 +36,20 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
         showDatePickerOnTap()
     }
     
+    func setDurationTextField() {
+        durationTextField.text = String(duration)
+    }
+    
     func showDatePickerOnTap() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(showDateTimePicker(_:)))
+        var tap = UITapGestureRecognizer(target: self, action: #selector(showStartDatePicker))
         tap.numberOfTapsRequired = 1
         endDateLabel.isUserInteractionEnabled = true
         startDateLabel.isUserInteractionEnabled = true
-        endDateLabel.addGestureRecognizer(tap)
+        
         startDateLabel.addGestureRecognizer(tap)
+        
+        tap = UITapGestureRecognizer(target: self, action: #selector(showEndDatePicker))
+        endDateLabel.addGestureRecognizer(tap)
     }
     
     func setupDurationStepper() {
@@ -56,29 +61,30 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     }
     
     func setEndDate() {
-        let photoshootEndDate: Date = photoshootStartDate.addingTimeInterval(TimeInterval(60 * 60 * 24 * (duration-1)))
+        let photoshootEndDate: Date = selectedStartDate.addingTimeInterval(TimeInterval(60 * 60 * 24 * (duration-1)))
         endDateLabel.text = photoshootEndDate.date
     }
     
     func setStartDate() {
-        startDateLabel.text = photoshootStartDate.date
+        startDateLabel.text = selectedStartDate.date
         setEndDate()
     }
 
     @IBAction func changeDate(_ sender: Any) {
-        showDateTimePicker(sender)
+        showDateTimePicker(picker: &picker)
     }
     @IBAction func changeDuration(_ sender: Any) {
         
         if durationTextField.text == "" {
-            durationTextField.text = "1"
+            duration = 1
+            setDurationTextField()
         }
         
         if let durationString = durationTextField.text {
             if let duration = Int(durationString) {
                 if duration > 15 {
                     self.duration = 15
-                    durationTextField.text = "\(self.duration)"
+                    setDurationTextField()
                 }
                 else {
                     self.duration = duration
@@ -92,103 +98,72 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     
     @IBAction func stepperChanged(_ sender: Any) {
         duration = Int(durationStepper.value)
-        durationTextField.text = String(duration)
+        setDurationTextField()
         setEndDate()
     }
 }
 
 extension PhotoshootDetailsFormViewController {
     
-    func showStartDatePicker() {
-        
+    @objc func showStartDatePicker() {
+        showDateTimePicker(picker: &picker)
     }
-    func showEndDatePicker() {
-        
+    @objc func showEndDatePicker() {
+        showDateTimePicker(picker: &endDatePicker)
     }
-    @objc func showDateTimePicker(_ sender: Any) {
+    
+    func showDateTimePicker(picker: inout DateTimePicker) {
         let min = Date().addingTimeInterval(0)
         let max = Date().addingTimeInterval(60 * 60 * 24 * 365)
         
-       
         
-        let picker = DateTimePicker.show(selected: Date(), minimumDate: min, maximumDate: max)
-        picker.selectedDate = self.selectedDate
+        
+        picker = DateTimePicker.show(selected: Date(), minimumDate: min, maximumDate: max)
+        
+        
         picker.timeInterval = DateTimePicker.MinuteInterval.thirty
         picker.highlightColor = UIColor(hexString: "#FF9300")
         picker.darkColor = UIColor.darkGray
         picker.doneButtonTitle = "SET START DATE"
+        
+        if picker == self.endDatePicker {
+            picker.minimumDate = self.selectedStartDate
+            picker.maximumDate = self.selectedStartDate.addingTimeInterval(TimeInterval(60 * 60 * 24 * 14))
+            picker.selectedDate = self.selectedStartDate.addingTimeInterval(TimeInterval(60 * 60 * 24 * (duration-1)))
+            picker.doneButtonTitle = "SET END DATE"
+        } else {
+            picker.selectedDate = self.selectedStartDate
+        }
+        
         picker.doneBackgroundColor = UIColor(hexString: "#FF9300")
         picker.locale = Locale(identifier: "en_GB")
         
         picker.todayButtonTitle = "Today"
         picker.is12HourFormat = true
         picker.dateFormat = "hh:mm aa dd/MM/YYYY"
-        //        picker.isTimePickerOnly = true
         
-        picker.includeMonth = true // if true the month shows at top
+        picker.includeMonth = true
+        
+        
         picker.completionHandler = { date in
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm aa dd/MM/YYYY"
             self.title = formatter.string(from: date)
         }
         picker.delegate = self
-        self.picker = picker
+        
+        
+        
     }
     
     func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {
-        photoshootStartDate = didSelectDate
-        selectedDate = photoshootStartDate
-        print(photoshootStartDate.date)
-        setStartDate()
-    }
-    
-    
-}
-
-extension Date {
-    var day: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd"
-        let myStringafd = formatter.string(from: self)
-        return myStringafd
-    }
-    
-    var month: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM"
-        let myStringafd = formatter.string(from: self)
-        return myStringafd
-    }
-    
-    var year: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY"
-        let myStringafd = formatter.string(from: self)
-        return myStringafd
-    }
-    
-    var date: String {
-        var date = self.day
-        switch (day) {
-        case "01":
-            date = "1st"
-        case "02":
-            date = "2nd"
-        case "03":
-            date = "3rd"
-        case "21" , "31":
-            date.append("st")
-        case "22":
-            date.append("nd")
-        case "23":
-            date.append("rd")
-        default:
-            date.append("th")
+        if picker == self.picker {
+            selectedStartDate = didSelectDate
+            setStartDate()
+        } else {
+            duration = Calendar.current.dateComponents([.day], from: selectedStartDate, to: didSelectDate.addingTimeInterval(60 * 60 * 24)).day!
+            setDurationTextField()
+            setEndDate()
         }
-        if date.first == "0" {
-            date.remove(at: String.Index.init(encodedOffset: 0))
-        }
-        date.append(" \(month) \(year)")
-        return date
     }
 }
