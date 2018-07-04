@@ -22,6 +22,11 @@ class BookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupPhotoGrid()
         setupSegmentioView()
         setupOnboardingSegmentioView()
@@ -73,7 +78,7 @@ class BookViewController: UIViewController {
             location = CGPoint(x: x*CGFloat(i%numberOfPicturesPerRow), y: x*CGFloat(i/numberOfPicturesPerRow))
             addPicture(at: location, withName: name)
         }
-        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: CGFloat(Int(21/numberOfPicturesPerRow)+1)*x)
+        scrollView.contentSize = CGSize(width: scrollView.frame.width, height: CGFloat(Int(21/numberOfPicturesPerRow))*x)
         scrollView.clipsToBounds = true
         scrollView.backgroundColor = UIColor.black
         scrollView.showsVerticalScrollIndicator = false
