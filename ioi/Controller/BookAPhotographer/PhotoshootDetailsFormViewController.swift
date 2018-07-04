@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EMAlertController
 
 class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDelegate {
     
@@ -38,6 +39,7 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     
     func setDurationTextField() {
         durationTextField.text = String(duration)
+        durationStepper.value = Double(duration)
     }
     
     func showDatePickerOnTap() {
@@ -73,6 +75,7 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     @IBAction func changeDate(_ sender: Any) {
         showDateTimePicker(picker: &picker)
     }
+    
     @IBAction func changeDuration(_ sender: Any) {
         
         if durationTextField.text == "" {
@@ -84,15 +87,13 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
             if let duration = Int(durationString) {
                 if duration > 15 {
                     self.duration = 15
-                    setDurationTextField()
                 }
                 else {
                     self.duration = duration
                 }
             }
         }
-        
-        durationStepper.value = Double(duration)
+        setDurationTextField()
         setEndDate()
     }
     
@@ -101,6 +102,22 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
         setDurationTextField()
         setEndDate()
     }
+    
+    
+    @IBAction func confirmDetails(_ sender: Any) {
+        let alert = EMAlertController(title: "Confirm Details", message: "Are you sure you want to request a photographer from \(String(describing: startDateLabel.text!)) to \(String(describing: endDateLabel.text!))?")
+        
+        let confirm = EMAlertAction(title: "YES", style: .normal) {
+            self.performSegue(withIdentifier: "confirmRequestSegue", sender: self)
+        }
+        let changeDates = EMAlertAction(title: "CHANGE DATES", style: .cancel)
+        
+        alert.addAction(action: confirm)
+        alert.addAction(action: changeDates)
+        alert.backgroundViewAlpha = 0.5
+        self.present(alert, animated: true)
+    }
+    
 }
 
 extension PhotoshootDetailsFormViewController {
@@ -151,9 +168,6 @@ extension PhotoshootDetailsFormViewController {
             self.title = formatter.string(from: date)
         }
         picker.delegate = self
-        
-        
-        
     }
     
     func dateTimePicker(_ picker: DateTimePicker, didSelectDate: Date) {

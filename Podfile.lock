@@ -10,6 +10,7 @@ PODS:
   - Motion (1.4.2):
     - Motion/Core (= 1.4.2)
   - Motion/Core (1.4.2)
+  - QRCodeReader.swift (8.2.0)
   - Segmentio (3.0)
 
 DEPENDENCIES:
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - FoldingCell
   - LGButton
   - Material (~> 2.0)
+  - QRCodeReader.swift (~> 8.2.0)
   - Segmentio (~> 3.0)
 
 SPEC REPOS:
@@ -28,6 +30,7 @@ SPEC REPOS:
     - LGButton
     - Material
     - Motion
+    - QRCodeReader.swift
     - Segmentio
 
 SPEC CHECKSUMS:
@@ -37,8 +40,9 @@ SPEC CHECKSUMS:
   LGButton: 707ce916eb80b73a6c4688df34bee11adbafb663
   Material: 6a85db48e092012f98704eb085852124f64b07af
   Motion: 93605fd4dffe44203b56949eb0bc73a9521af7b6
+  QRCodeReader.swift: 003eb32f18a5a675b936ec82ba0ff368cddbff45
   Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
 
-PODFILE CHECKSUM: 130302c3ceffc0b7ccde1a5bc355da1929dc14e7
+PODFILE CHECKSUM: b9433f3e2e92d5b8ffdcc84e4087db07a6de4452
 
 COCOAPODS: 1.5.0

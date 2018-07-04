@@ -24,6 +24,7 @@ pod 'ElongationPreview', '~> 1.1'
 pod 'Segmentio', '~> 3.0'
 pod 'EMAlertController'
 pod 'LGButton'
+pod 'QRCodeReader.swift', '~> 8.2.0'
 end
 
 post_install do |installer|
