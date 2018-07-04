@@ -23,6 +23,9 @@
 		9E33805120E63B4100164A51 /* PhotoshootDetailsFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E33805020E63B4100164A51 /* PhotoshootDetailsFormViewController.swift */; };
 		9E35703920ECD6E400492A73 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35703820ECD6E400492A73 /* DateExtension.swift */; };
 		9E35703D20ECE24400492A73 /* ScanQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35703C20ECE24400492A73 /* ScanQRViewController.swift */; };
+		9E35704020ED103900492A73 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35703F20ED103900492A73 /* Colors.swift */; };
+		9E35704220ED2DAF00492A73 /* PhotoshootDetailsAfterScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35704120ED2DAF00492A73 /* PhotoshootDetailsAfterScanViewController.swift */; };
+		9E35704420ED395000492A73 /* FixedPhotographerPendingRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E35704320ED395000492A73 /* FixedPhotographerPendingRequestViewController.swift */; };
 		9E484A8620E5081A008BC8B1 /* DemoElongationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484A8420E5081A008BC8B1 /* DemoElongationCell.swift */; };
 		9E484A8720E5081A008BC8B1 /* DemoElongationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E484A8520E5081A008BC8B1 /* DemoElongationCell.xib */; };
 		9E484A8A20E509E5008BC8B1 /* Villa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484A8920E509E5008BC8B1 /* Villa.swift */; };
@@ -105,6 +108,9 @@
 		9E33805020E63B4100164A51 /* PhotoshootDetailsFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoshootDetailsFormViewController.swift; sourceTree = "<group>"; };
 		9E35703820ECD6E400492A73 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		9E35703C20ECE24400492A73 /* ScanQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanQRViewController.swift; sourceTree = "<group>"; };
+		9E35703F20ED103900492A73 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		9E35704120ED2DAF00492A73 /* PhotoshootDetailsAfterScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoshootDetailsAfterScanViewController.swift; sourceTree = "<group>"; };
+		9E35704320ED395000492A73 /* FixedPhotographerPendingRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedPhotographerPendingRequestViewController.swift; sourceTree = "<group>"; };
 		9E484A8420E5081A008BC8B1 /* DemoElongationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoElongationCell.swift; sourceTree = "<group>"; };
 		9E484A8520E5081A008BC8B1 /* DemoElongationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DemoElongationCell.xib; sourceTree = "<group>"; };
 		9E484A8920E509E5008BC8B1 /* Villa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Villa.swift; sourceTree = "<group>"; };
@@ -251,8 +257,18 @@
 			isa = PBXGroup;
 			children = (
 				9E35703C20ECE24400492A73 /* ScanQRViewController.swift */,
+				9E35704120ED2DAF00492A73 /* PhotoshootDetailsAfterScanViewController.swift */,
+				9E35704320ED395000492A73 /* FixedPhotographerPendingRequestViewController.swift */,
 			);
 			path = BookUsingQRCode;
+			sourceTree = "<group>";
+		};
+		9E35703E20ED102C00492A73 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				9E35703F20ED103900492A73 /* Colors.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 		9E484A8820E50824008BC8B1 /* DemoElongationCell */ = {
@@ -275,6 +291,7 @@
 		9E484A9020E50AA9008BC8B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E35703E20ED102C00492A73 /* Colors */,
 				9E484A9120E50AB4008BC8B1 /* Fonts */,
 			);
 			path = Resources;
@@ -704,6 +721,7 @@
 				9EDEF0EA20E8002100CB824F /* PendingConfirmationViewController.swift in Sources */,
 				9E484A8F20E50A83008BC8B1 /* UIFontExtention.swift in Sources */,
 				9E2A930B20D43E5C007661CF /* DateCollectionViewCell.swift in Sources */,
+				9E35704420ED395000492A73 /* FixedPhotographerPendingRequestViewController.swift in Sources */,
 				9E35703920ECD6E400492A73 /* DateExtension.swift in Sources */,
 				9EB18DF120CD47BF008BD45E /* AppDelegate.swift in Sources */,
 				9EB18E2420CD4F97008BD45E /* InterestsScrollView.swift in Sources */,
@@ -714,6 +732,7 @@
 				9EB18E2A20CD5099008BD45E /* Interests.swift in Sources */,
 				9EDEF0E820E7E8D900CB824F /* NotificationTableViewCell.swift in Sources */,
 				9E2A930A20D43E5C007661CF /* DateTimePicker.swift in Sources */,
+				9E35704020ED103900492A73 /* Colors.swift in Sources */,
 				9E35703D20ECE24400492A73 /* ScanQRViewController.swift in Sources */,
 				9EB18E3920CE6633008BD45E /* BookViewController.swift in Sources */,
 				9E33804A20E5FD2800164A51 /* SecondPhotoGridViewController.swift in Sources */,
@@ -723,6 +742,7 @@
 				9E484AA820E58BEC008BC8B1 /* MyRequestsTableViewController.swift in Sources */,
 				9E33804F20E6118000164A51 /* NavBar.swift in Sources */,
 				9EB18E2720CD504A008BD45E /* PickInterestsViewController.swift in Sources */,
+				9E35704220ED2DAF00492A73 /* PhotoshootDetailsAfterScanViewController.swift in Sources */,
 				9E1351B820E734450094DC97 /* UIViewExtension.swift in Sources */,
 				9E2A92FA20D3FDDA007661CF /* EnterDetailsViewController.swift in Sources */,
 				9E484A8A20E509E5008BC8B1 /* Villa.swift in Sources */,
