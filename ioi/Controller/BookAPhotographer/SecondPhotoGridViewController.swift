@@ -39,5 +39,4 @@ extension UIView {
         self.layer.cornerRadius = radius
         self.clipsToBounds = true
     }
-    
 }

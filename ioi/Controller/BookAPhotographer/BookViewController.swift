@@ -70,6 +70,10 @@ class BookViewController: UIViewController {
     
     @objc func setupPhotoGrid() {
         
+        for subview in scrollView.subviews {
+            subview.removeFromSuperview()
+        }
+        
         let numberOfPicturesPerRow = 3
         let x = self.scrollView.frame.width/CGFloat(numberOfPicturesPerRow)
         var location = CGPoint()
