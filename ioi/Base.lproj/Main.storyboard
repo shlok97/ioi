@@ -1182,7 +1182,54 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ghi-Sw-mKS">
                                 <rect key="frame" x="0.0" y="147" width="375" height="407"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uvc-jE-SEn" customClass="TextField" customModule="Material">
+                                        <rect key="frame" x="23" y="30" width="329" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="aec-IH-xim"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Enter Mobile Number"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="enteringMobileNumber:" destination="0yG-LK-N7k" eventType="editingDidEnd" id="Yng-PF-fa6"/>
+                                        </connections>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TsX-Gg-Lv8" customClass="LGButton" customModule="LGButton">
+                                        <rect key="frame" x="0.0" y="362" width="375" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="s44-mx-ku9"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="CONTINUE"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                                <color key="value" red="1" green="0.68807572508169934" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                                <color key="value" red="1" green="0.52732268688725492" blue="0.30196078431372547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="gradientRotation">
+                                                <real key="value" value="45"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="continueButtonTapped:" destination="0yG-LK-N7k" eventType="touchUpInside" id="qSs-mO-H1R"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="TsX-Gg-Lv8" firstAttribute="leading" secondItem="Ghi-Sw-mKS" secondAttribute="leading" id="6v0-zV-1G1"/>
+                                    <constraint firstAttribute="bottom" secondItem="TsX-Gg-Lv8" secondAttribute="bottom" id="E3F-4q-JiO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Uvc-jE-SEn" secondAttribute="trailing" constant="23" id="InB-AH-Bca"/>
+                                    <constraint firstAttribute="trailing" secondItem="TsX-Gg-Lv8" secondAttribute="trailing" id="QZZ-jB-BBu"/>
+                                    <constraint firstItem="Uvc-jE-SEn" firstAttribute="leading" secondItem="Ghi-Sw-mKS" secondAttribute="leading" constant="23" id="mfc-xx-cqe"/>
+                                    <constraint firstItem="Uvc-jE-SEn" firstAttribute="top" secondItem="Ghi-Sw-mKS" secondAttribute="top" constant="30" id="vG9-at-Zgj"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.92000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1199,6 +1246,8 @@
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="Ghi-Sw-mKS" id="wN7-iW-gKC"/>
+                        <outlet property="continueButton" destination="TsX-Gg-Lv8" id="brf-NH-d6Z"/>
+                        <outlet property="mobileNumberTextField" destination="Uvc-jE-SEn" id="Egv-3w-2XU"/>
                         <outlet property="recentsView" destination="yZl-Bw-Fj3" id="DnD-hS-Iiu"/>
                         <outlet property="recentsViewHeightConstraint" destination="JzA-5q-VS0" id="aYb-7I-1Xp"/>
                         <outletCollection property="recentPhotographerImage" destination="n9M-Em-xGo" collectionClass="NSMutableArray" id="gsf-lO-YXt"/>

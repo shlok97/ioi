@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import LGButton
+import Material
 
 class ScanQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -16,22 +18,33 @@ class ScanQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     var qrCodeFrameView:UIView?
     
     @IBOutlet var cameraView: UIView!
-    
     @IBOutlet var recentsView: UIView!
-    
     @IBOutlet var recentsViewHeightConstraint: NSLayoutConstraint!
-    
     @IBOutlet var recentPhotographerImage: [UIImageView]!
-    
     @IBOutlet var recentPhotographerName: [UILabel]!
-    
+    @IBOutlet var continueButton: LGButton!
+    @IBOutlet var mobileNumberTextField: TextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        continueButton.isHidden = true
+        hideKeyboardWhenTappedAround()
     }
+    
+    @IBAction func enteringMobileNumber(_ sender: Any) {
+        if mobileNumberTextField.text != "" {
+            continueButton.isHidden = false
+        } else {
+            continueButton.isHidden = true
+        }
+    }
+    @IBAction func continueButtonTapped(_ sender: Any) {
+        scanSuccessful()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         setupCameraView()
         setupQRScanner()
@@ -43,6 +56,10 @@ class ScanQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             recentPhotographerImage[index].randomUserImage()
             recentPhotographerName[index].text = Lorem.firstName
         }
+    }
+    
+    func scanSuccessful() {
+        self.performSegue(withIdentifier: "scanSuccessful", sender: nil)
     }
 }
 
@@ -81,7 +98,8 @@ extension ScanQRViewController {
             
             cameraView.backgroundColor = UIColor.black
             cameraView.layer.addSublayer(videoPreviewLayer!)
-            
+            cameraView.bringSubview(toFront: mobileNumberTextField)
+            cameraView.bringSubview(toFront: continueButton)
             // Start video capture.
             captureSession!.startRunning()
             
@@ -125,7 +143,7 @@ extension ScanQRViewController {
             if let result = metadataObj.stringValue {
                 print(result)
                 captureSession!.stopRunning()
-                self.performSegue(withIdentifier: "scanSuccessful", sender: nil)
+                scanSuccessful()
             }
         }
     }
