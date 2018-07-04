@@ -1517,6 +1517,9 @@
                                                         <color key="value" red="0.94901960780000005" green="0.66138078280000001" blue="0.16862745100000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="cancelRequest:" destination="oAf-Sy-lyV" eventType="touchUpOutside" id="zhI-ao-5y1"/>
+                                                </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VA-vc-8Pr" customClass="LGButton" customModule="LGButton">
                                                 <rect key="frame" x="0.0" y="347" width="311" height="40"/>
@@ -1533,6 +1536,9 @@
                                                         <color key="value" red="0.22337941689999999" green="0.54823516650000004" blue="0.69081712110000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="doneButtonTapped:" destination="oAf-Sy-lyV" eventType="touchUpInside" id="mgK-sF-rHf"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <constraints>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EMAlertController
 
 class PhotoshootDetailsAfterScanViewController: PhotoshootDetailsFormViewController {
 
@@ -20,6 +21,10 @@ class PhotoshootDetailsAfterScanViewController: PhotoshootDetailsFormViewControl
         
         photographerImage.randomImage()
         photographerNameLabel.text = Lorem.name
+    }
+    
+    override func confirmDetails(_ sender: Any) {
+        showConfirmDetailsAlert(photographerName: photographerNameLabel.text)
     }
 
 }

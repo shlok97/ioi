@@ -105,7 +105,16 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     
     
     @IBAction func confirmDetails(_ sender: Any) {
-        let alert = EMAlertController(title: "Confirm Details", message: "Are you sure you want to request a photographer from \(String(describing: startDateLabel.text!)) to \(String(describing: endDateLabel.text!))?")
+        showConfirmDetailsAlert()
+    }
+    
+    func showConfirmDetailsAlert(photographerName: String? = nil) {
+        var name = photographerName
+        if photographerName == nil {
+            name = "a photographer"
+        }
+        
+        let alert = EMAlertController(title: "Confirm Details", message: "Are you sure you want to request \(name!) from \(startDateLabel.text!) to \( endDateLabel.text!)?")
         
         let confirm = EMAlertAction(title: "YES", style: .normal) {
             self.performSegue(withIdentifier: "confirmRequestSegue", sender: self)
@@ -130,6 +139,8 @@ extension PhotoshootDetailsFormViewController {
     }
     
     func showDateTimePicker(picker: inout DateTimePicker) {
+        
+        
         let min = Date().addingTimeInterval(0)
         let max = Date().addingTimeInterval(60 * 60 * 24 * 365)
         
