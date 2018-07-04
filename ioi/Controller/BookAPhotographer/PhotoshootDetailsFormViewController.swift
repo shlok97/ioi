@@ -35,6 +35,24 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     
     override func viewDidAppear(_ animated: Bool) {
         showDatePickerOnTap()
+        addKeyboardObservers()
+    }
+    
+    func addKeyboardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillDisappear), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillAppear), name: Notification.Name.UIKeyboardWillShow, object: nil)
+    }
+    
+    @objc func keyboardWillAppear(notification: NSNotification){
+        // Do something here
+        startDateLabel.isUserInteractionEnabled = false
+        endDateLabel.isUserInteractionEnabled = false
+    }
+    
+    @objc func keyboardWillDisappear(notification: NSNotification){
+        // Do something here
+        startDateLabel.isUserInteractionEnabled = true
+        endDateLabel.isUserInteractionEnabled = true
     }
     
     func setDurationTextField() {
