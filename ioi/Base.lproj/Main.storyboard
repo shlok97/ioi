@@ -1828,54 +1828,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tRj-T8-lCa">
                                 <rect key="frame" x="16" y="120" width="343" height="376"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photogridCell" rowHeight="239" id="hAu-7B-zqp" customClass="SecondPhotoGridTableViewCell" customModule="ioi" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="239"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hAu-7B-zqp" id="GxW-49-ELj">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="238.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black" translatesAutoresizingMaskIntoConstraints="NO" id="IOg-Dv-awE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="238.5"/>
-                                                </imageView>
-                                                <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzw-e3-KOC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="239"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorite" translatesAutoresizingMaskIntoConstraints="NO" id="Rns-Xa-KCY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="239"/>
-                                                        </imageView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="Rns-Xa-KCY" secondAttribute="trailing" id="ZLB-uT-VZ3"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Rns-Xa-KCY" secondAttribute="bottom" id="lm6-Pc-WXd"/>
-                                                        <constraint firstItem="Rns-Xa-KCY" firstAttribute="top" secondItem="Wzw-e3-KOC" secondAttribute="top" id="olN-HG-1rp"/>
-                                                        <constraint firstItem="Rns-Xa-KCY" firstAttribute="leading" secondItem="Wzw-e3-KOC" secondAttribute="leading" id="qS0-T2-mZp"/>
-                                                    </constraints>
-                                                </view>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="IOg-Dv-awE" secondAttribute="trailing" id="5Zt-g4-42F"/>
-                                                <constraint firstAttribute="trailing" secondItem="IOg-Dv-awE" secondAttribute="trailing" id="B1l-KW-Zi4"/>
-                                                <constraint firstAttribute="bottom" secondItem="Wzw-e3-KOC" secondAttribute="bottom" id="IVq-T8-OG9"/>
-                                                <constraint firstAttribute="bottom" secondItem="IOg-Dv-awE" secondAttribute="bottom" id="K2i-kB-jk6"/>
-                                                <constraint firstItem="IOg-Dv-awE" firstAttribute="top" secondItem="GxW-49-ELj" secondAttribute="top" id="Su3-cw-M4s"/>
-                                                <constraint firstAttribute="trailing" secondItem="Wzw-e3-KOC" secondAttribute="trailing" id="XH0-iy-wzU"/>
-                                                <constraint firstItem="IOg-Dv-awE" firstAttribute="top" secondItem="GxW-49-ELj" secondAttribute="top" id="coW-0g-CGA"/>
-                                                <constraint firstAttribute="bottom" secondItem="IOg-Dv-awE" secondAttribute="bottom" id="fHa-Fx-VGG"/>
-                                                <constraint firstItem="IOg-Dv-awE" firstAttribute="leading" secondItem="GxW-49-ELj" secondAttribute="leading" id="kXn-8V-cqM"/>
-                                                <constraint firstItem="Wzw-e3-KOC" firstAttribute="leading" secondItem="GxW-49-ELj" secondAttribute="leading" id="lbZ-yP-fhx"/>
-                                                <constraint firstItem="Wzw-e3-KOC" firstAttribute="top" secondItem="GxW-49-ELj" secondAttribute="top" id="nay-8u-fyl"/>
-                                                <constraint firstItem="IOg-Dv-awE" firstAttribute="leading" secondItem="GxW-49-ELj" secondAttribute="leading" id="xco-dy-O1V"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="darkView" destination="Wzw-e3-KOC" id="QHD-AB-ZNV"/>
-                                            <outlet property="photoGridImageView" destination="IOg-Dv-awE" id="FEH-L4-PJ0"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.91521701388888888" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2174,9 +2126,7 @@
     </scenes>
     <resources>
         <image name="background" width="640" height="1136"/>
-        <image name="black" width="300" height="300"/>
         <image name="facebook-login" width="416" height="101"/>
-        <image name="favorite" width="1716" height="1261"/>
         <image name="signup" width="469" height="832"/>
     </resources>
 </document>

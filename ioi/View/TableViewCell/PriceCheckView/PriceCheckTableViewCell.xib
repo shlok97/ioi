@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="446" id="Bya-XK-shU" customClass="PriceCheckTableViewCell" customModule="ioi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="466" height="446"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bya-XK-shU" id="Y7b-U9-iUb">
+                <rect key="frame" x="0.0" y="0.0" width="466" height="445.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Approximate Fee: ₹3500/day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByT-ep-o17">
+                        <rect key="frame" x="20" y="399" width="426" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="xLH-vP-vmW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                        <color key="textColor" red="0.23814244923857864" green="0.23814244923857864" blue="0.23814244923857864" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-ED-CEs">
+                        <rect key="frame" x="0.0" y="8" width="466" height="338"/>
+                    </scrollView>
+                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="P59-oE-IZp">
+                        <rect key="frame" x="20" y="354" width="426" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="37" id="9Fz-rA-81P"/>
+                        </constraints>
+                        <color key="pageIndicatorTintColor" white="0.7958984375" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </pageControl>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JDo-ED-CEs" firstAttribute="leading" secondItem="Y7b-U9-iUb" secondAttribute="leading" id="4pL-Sc-IkK"/>
+                    <constraint firstItem="ByT-ep-o17" firstAttribute="top" secondItem="P59-oE-IZp" secondAttribute="bottom" constant="8" id="EPW-jF-5ah"/>
+                    <constraint firstItem="ByT-ep-o17" firstAttribute="leading" secondItem="Y7b-U9-iUb" secondAttribute="leadingMargin" id="GlJ-Ia-etX"/>
+                    <constraint firstAttribute="trailing" secondItem="JDo-ED-CEs" secondAttribute="trailing" id="HfD-y5-joc"/>
+                    <constraint firstItem="ByT-ep-o17" firstAttribute="bottom" secondItem="Y7b-U9-iUb" secondAttribute="bottomMargin" constant="-8" id="ON1-fj-6xY"/>
+                    <constraint firstItem="P59-oE-IZp" firstAttribute="top" secondItem="JDo-ED-CEs" secondAttribute="bottom" constant="8" id="Uv8-jn-3Kf"/>
+                    <constraint firstItem="JDo-ED-CEs" firstAttribute="top" secondItem="Y7b-U9-iUb" secondAttribute="top" constant="8" id="W7O-2I-SbO"/>
+                    <constraint firstItem="ByT-ep-o17" firstAttribute="trailing" secondItem="Y7b-U9-iUb" secondAttribute="trailingMargin" id="dq8-Ig-hde"/>
+                    <constraint firstItem="P59-oE-IZp" firstAttribute="leading" secondItem="Y7b-U9-iUb" secondAttribute="leadingMargin" id="e1g-VE-w18"/>
+                    <constraint firstItem="P59-oE-IZp" firstAttribute="trailing" secondItem="Y7b-U9-iUb" secondAttribute="trailingMargin" id="zhY-9c-EWU"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="feeLabel" destination="ByT-ep-o17" id="JwT-Cf-d2Z"/>
+                <outlet property="pageControl" destination="P59-oE-IZp" id="vvf-ZJ-CRw"/>
+                <outlet property="scrollView" destination="JDo-ED-CEs" id="LaT-kT-G2p"/>
+            </connections>
+            <point key="canvasLocation" x="499" y="745"/>
+        </tableViewCell>
+    </objects>
+</document>

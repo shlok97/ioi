@@ -14,15 +14,19 @@ class SecondPhotoGridViewController: UIViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        tableView.reloadData()
-        tableView.backgroundColor = UIColor.clear
         tableView.roundCorners()
         tableView.showsVerticalScrollIndicator = false
+        tableView.register(UINib(nibName: "PriceCheckTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "priceCheckCell")
+        tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "photogridCell") as! SecondPhotoGridTableViewCell
-        cell.photoGridImageView.randomImage()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "priceCheckCell") as! PriceCheckTableViewCell
+        cell.setupCell()
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +34,7 @@ class SecondPhotoGridViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200.0
+        return 250.0
     }
 }
 
