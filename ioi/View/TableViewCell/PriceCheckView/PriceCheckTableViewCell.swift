@@ -8,11 +8,13 @@
 
 import UIKit
 import Material
+import LGButton
 
 class PriceCheckTableViewCell: TableViewCell, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var feeLabel: UILabel!
     @IBOutlet var pageControl: UIPageControl!
+    @IBOutlet var shortlistButton: LGButton!
     
     let darkView: UIView = UIView()
     
@@ -20,9 +22,11 @@ class PriceCheckTableViewCell: TableViewCell, UIScrollViewDelegate {
     
     @objc func toggle() {
         if _isShortlisted {
+            shortlistButton.titleString = "SHORTLIST"
             _isShortlisted = false
         }
         else {
+            shortlistButton.titleString = "REMOVE FROM SHORTLIST"
             _isShortlisted = true
         }
         UIView.animate(withDuration: 0.15) {
@@ -46,6 +50,8 @@ class PriceCheckTableViewCell: TableViewCell, UIScrollViewDelegate {
         let tap = UITapGestureRecognizer(target: self, action: #selector(toggle))
         tap.numberOfTapsRequired = 1
         self.addGestureRecognizer(tap)
+        
+        shortlistButton.addTarget(self, action: #selector(toggle), for: .touchUpInside)
     }
     
     func setupCell() {

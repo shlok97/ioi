@@ -34,7 +34,7 @@ class SecondPhotoGridViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250.0
+        return 280.0
     }
 }
 
