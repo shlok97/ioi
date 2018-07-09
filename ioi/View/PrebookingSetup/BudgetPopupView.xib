@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="DHc-Tb-kPl" customClass="BudgetPopupView" customModule="ioi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="504"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9If-Dd-dYx" customClass="LGButton" customModule="LGButton">
+                    <rect key="frame" x="0.0" y="464" width="375" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="XsC-AE-9ef"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                            <color key="value" cyan="0.77000308039999998" magenta="0.43137663599999998" yellow="0.17437720300000001" black="0.3256498827" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                            <color key="value" cyan="0.90379214289999998" magenta="0.1518627471" yellow="0.17437720300000001" black="0.40385514810000001" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="DONE"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="continueButtonTapped:" destination="DHc-Tb-kPl" eventType="touchUpInside" id="rqE-a6-P2d"/>
+                        <action selector="doneButtonTapped:" destination="DHc-Tb-kPl" eventType="touchUpInside" id="chS-5s-V0Q"/>
+                    </connections>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENTER BUDGET" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frh-Tz-gG7">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                    <color key="backgroundColor" red="0.20784313730000001" green="0.43921568630000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="fDI-J4-dfo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfV-rh-isC">
+                    <rect key="frame" x="8" y="50" width="359" height="406"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWY-bi-7FS" customClass="RangeSlider" customModule="SwiftRangeSlider">
+                            <rect key="frame" x="8" y="30" width="343" height="52"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="52" id="3vu-Gl-UeO"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kWY-bi-7FS" secondAttribute="trailing" constant="8" id="8eC-Zb-G4u"/>
+                        <constraint firstItem="kWY-bi-7FS" firstAttribute="top" secondItem="vfV-rh-isC" secondAttribute="top" constant="30" id="Tnb-Fc-Qbu"/>
+                        <constraint firstItem="kWY-bi-7FS" firstAttribute="leading" secondItem="vfV-rh-isC" secondAttribute="leading" constant="8" id="hGN-wa-2U3"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maximumValue">
+                            <real key="value" value="100"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="lowerValue">
+                            <real key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="upperValue">
+                            <real key="value" value="60"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="stepValue">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="trackThickness">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="knobSize">
+                            <real key="value" value="30"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="agi-36-V2X" firstAttribute="trailing" secondItem="9If-Dd-dYx" secondAttribute="trailing" id="5RQ-t2-OEi"/>
+                <constraint firstItem="agi-36-V2X" firstAttribute="trailing" secondItem="frh-Tz-gG7" secondAttribute="trailing" id="7CY-ei-BqY"/>
+                <constraint firstItem="vfV-rh-isC" firstAttribute="leading" secondItem="agi-36-V2X" secondAttribute="leading" constant="8" id="GoA-ZJ-Cgz"/>
+                <constraint firstItem="9If-Dd-dYx" firstAttribute="leading" secondItem="DHc-Tb-kPl" secondAttribute="leading" id="HP7-8n-u5O"/>
+                <constraint firstItem="agi-36-V2X" firstAttribute="trailing" secondItem="vfV-rh-isC" secondAttribute="trailing" constant="8" id="J1V-FU-1YY"/>
+                <constraint firstItem="vfV-rh-isC" firstAttribute="top" secondItem="frh-Tz-gG7" secondAttribute="bottom" constant="8" id="KtW-st-pJs"/>
+                <constraint firstItem="9If-Dd-dYx" firstAttribute="top" secondItem="vfV-rh-isC" secondAttribute="bottom" constant="8" id="U1d-dK-2XW"/>
+                <constraint firstItem="agi-36-V2X" firstAttribute="bottom" secondItem="9If-Dd-dYx" secondAttribute="bottom" id="WKT-1V-jUq"/>
+                <constraint firstItem="frh-Tz-gG7" firstAttribute="top" secondItem="DHc-Tb-kPl" secondAttribute="top" id="cW1-Yq-fbD"/>
+                <constraint firstItem="frh-Tz-gG7" firstAttribute="leading" secondItem="DHc-Tb-kPl" secondAttribute="leading" id="d9b-Hs-19t"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="agi-36-V2X"/>
+            <connections>
+                <outlet property="bottomButton" destination="9If-Dd-dYx" id="DjG-eK-Q24"/>
+                <outlet property="budgetSlider" destination="kWY-bi-7FS" id="UkZ-0t-k7X"/>
+                <outlet property="titleLabel" destination="frh-Tz-gG7" id="iKy-ba-dvd"/>
+            </connections>
+            <point key="canvasLocation" x="-57.5" y="-30"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PhotoshootTypePopupView" customModule="ioi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="504"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pog-0V-wQI" customClass="PhotoshootTypeSegmentioPopup" customModule="ioi" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="42" width="375" height="422"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6T-Et-3cA" customClass="LGButton" customModule="LGButton">
+                    <rect key="frame" x="0.0" y="464" width="375" height="40"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="EEH-Vv-bf5"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                            <color key="value" cyan="0.77000308039999998" magenta="0.43137663599999998" yellow="0.17437720300000001" black="0.3256498827" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                            <color key="value" cyan="0.90379214289999998" magenta="0.1518627471" yellow="0.17437720300000001" black="0.40385514810000001" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="CONTINUE"/>
+                        <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="continueButtonTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="FHg-T8-J1i"/>
+                    </connections>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE PHOTOSHOOT TYPE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAA-JC-fgS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                    <color key="backgroundColor" red="0.20784313730000001" green="0.43921568630000002" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="jBz-3K-hoV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="r6T-Et-3cA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="8d6-4s-1uS"/>
+                <constraint firstItem="fAA-JC-fgS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BqO-9G-VBg"/>
+                <constraint firstItem="r6T-Et-3cA" firstAttribute="top" secondItem="Pog-0V-wQI" secondAttribute="bottom" id="DFb-C3-5Hp"/>
+                <constraint firstItem="Pog-0V-wQI" firstAttribute="top" secondItem="fAA-JC-fgS" secondAttribute="bottom" id="Du9-aM-bjU"/>
+                <constraint firstItem="Pog-0V-wQI" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="LOy-g9-3HL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="r6T-Et-3cA" secondAttribute="bottom" id="U2h-ZK-Oli"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="fAA-JC-fgS" secondAttribute="trailing" id="csJ-aW-bFh"/>
+                <constraint firstItem="Pog-0V-wQI" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kAY-J6-4B9"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="r6T-Et-3cA" secondAttribute="trailing" id="pNV-pc-Dnm"/>
+                <constraint firstItem="fAA-JC-fgS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tzW-4x-bVj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="bottomButton" destination="r6T-Et-3cA" id="GCh-1K-k8q"/>
+                <outlet property="photoshootTypeSegmentio" destination="Pog-0V-wQI" id="h0O-dD-0R7"/>
+                <outlet property="titleLabel" destination="fAA-JC-fgS" id="7Wh-Gl-qyR"/>
+            </connections>
+            <point key="canvasLocation" x="131.5" y="-28"/>
+        </view>
+    </objects>
+</document>

@@ -40,6 +40,10 @@
 		9E484AA620E57BF0008BC8B1 /* RequestFoldingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484AA420E57BF0008BC8B1 /* RequestFoldingTableViewCell.swift */; };
 		9E484AA820E58BEC008BC8B1 /* MyRequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E484AA720E58BEC008BC8B1 /* MyRequestsTableViewController.swift */; };
 		9E9CCD0120E404C8009CF891 /* EventPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9CCD0020E404C8009CF891 /* EventPhotosViewController.swift */; };
+		9EAB419020F1030000770F7C /* PhotoshootTypePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB418F20F1030000770F7C /* PhotoshootTypePopupView.swift */; };
+		9EAB419320F103B700770F7C /* PhotoshootTypePopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB419220F103B700770F7C /* PhotoshootTypePopupView.xib */; };
+		9EAB419520F1395B00770F7C /* BudgetPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAB419420F1395B00770F7C /* BudgetPopupView.xib */; };
+		9EAB419720F139B800770F7C /* BudgetPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAB419620F139B800770F7C /* BudgetPopupView.swift */; };
 		9EB18DF120CD47BF008BD45E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB18DF020CD47BF008BD45E /* AppDelegate.swift */; };
 		9EB18DF320CD47BF008BD45E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB18DF220CD47BF008BD45E /* SignUpViewController.swift */; };
 		9EB18DF620CD47BF008BD45E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EB18DF420CD47BF008BD45E /* Main.storyboard */; };
@@ -128,6 +132,10 @@
 		9E484AA420E57BF0008BC8B1 /* RequestFoldingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFoldingTableViewCell.swift; sourceTree = "<group>"; };
 		9E484AA720E58BEC008BC8B1 /* MyRequestsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRequestsTableViewController.swift; sourceTree = "<group>"; };
 		9E9CCD0020E404C8009CF891 /* EventPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPhotosViewController.swift; sourceTree = "<group>"; };
+		9EAB418F20F1030000770F7C /* PhotoshootTypePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoshootTypePopupView.swift; sourceTree = "<group>"; };
+		9EAB419220F103B700770F7C /* PhotoshootTypePopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoshootTypePopupView.xib; sourceTree = "<group>"; };
+		9EAB419420F1395B00770F7C /* BudgetPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BudgetPopupView.xib; sourceTree = "<group>"; };
+		9EAB419620F139B800770F7C /* BudgetPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetPopupView.swift; sourceTree = "<group>"; };
 		9EB18DED20CD47BF008BD45E /* ioi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB18DF020CD47BF008BD45E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB18DF220CD47BF008BD45E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -211,12 +219,12 @@
 		9E2A92F420D3E9FB007661CF /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				9E9750B720F211B3006AA657 /* PriceCheckView */,
 				9E484AA220E57BBC008BC8B1 /* RequestFoldingCell */,
 				9E484A9D20E53CA0008BC8B1 /* BookingFoldingCell */,
 				9E484A8820E50824008BC8B1 /* DemoElongationCell */,
 				9E2A92F520D3EA25007661CF /* RequestTableViewCell.swift */,
 				9EDEF0E720E7E8D900CB824F /* NotificationTableViewCell.swift */,
-				9E33804B20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift */,
 				9EB892B020D64BA100B85C55 /* MemoriesTableViewCell.swift */,
 			);
 			path = TableViewCell;
@@ -334,6 +342,25 @@
 			path = RequestFoldingCell;
 			sourceTree = "<group>";
 		};
+		9E9750B720F211B3006AA657 /* PriceCheckView */ = {
+			isa = PBXGroup;
+			children = (
+				9E33804B20E5FDD600164A51 /* SecondPhotoGridTableViewCell.swift */,
+			);
+			path = PriceCheckView;
+			sourceTree = "<group>";
+		};
+		9EAB419120F1035F00770F7C /* PrebookingSetup */ = {
+			isa = PBXGroup;
+			children = (
+				9EAB418F20F1030000770F7C /* PhotoshootTypePopupView.swift */,
+				9EAB419220F103B700770F7C /* PhotoshootTypePopupView.xib */,
+				9EAB419620F139B800770F7C /* BudgetPopupView.swift */,
+				9EAB419420F1395B00770F7C /* BudgetPopupView.xib */,
+			);
+			path = PrebookingSetup;
+			sourceTree = "<group>";
+		};
 		9EB18DE420CD47BF008BD45E = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +425,7 @@
 		9EB18E1E20CD4A95008BD45E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9EAB419120F1035F00770F7C /* PrebookingSetup */,
 				9E484A9520E50E5B008BC8B1 /* GridViewCell */,
 				9E2A92F420D3E9FB007661CF /* TableViewCell */,
 				9EB18E3320CE6460008BD45E /* Photo Grid */,
@@ -582,6 +610,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EB18DFB20CD47BF008BD45E /* LaunchScreen.storyboard in Resources */,
+				9EAB419320F103B700770F7C /* PhotoshootTypePopupView.xib in Resources */,
+				9EAB419520F1395B00770F7C /* BudgetPopupView.xib in Resources */,
 				9EB18E3520CE648D008BD45E /* PhotoGridPicture.xib in Resources */,
 				9E484A9920E50E97008BC8B1 /* GridViewCell.xib in Resources */,
 				9EB18DF820CD47BF008BD45E /* Assets.xcassets in Resources */,
@@ -678,6 +708,7 @@
 				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftRangeSlider/SwiftRangeSlider.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -689,6 +720,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRangeSlider.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -738,6 +770,7 @@
 				9E33804A20E5FD2800164A51 /* SecondPhotoGridViewController.swift in Sources */,
 				9E484AA020E53CE9008BC8B1 /* BookingFoldingTableViewCell.swift in Sources */,
 				9E484A8D20E50A32008BC8B1 /* LoremSwiftum.swift in Sources */,
+				9EAB419720F139B800770F7C /* BudgetPopupView.swift in Sources */,
 				9E2A92F620D3EA25007661CF /* RequestTableViewCell.swift in Sources */,
 				9E484AA820E58BEC008BC8B1 /* MyRequestsTableViewController.swift in Sources */,
 				9E33804F20E6118000164A51 /* NavBar.swift in Sources */,
@@ -750,6 +783,7 @@
 				9EDEF0E420E7E47300CB824F /* ProfileViewController.swift in Sources */,
 				9E484A9820E50E97008BC8B1 /* GridViewCell.swift in Sources */,
 				9EB18E2F20CD51FF008BD45E /* UIImageViewExtention.swift in Sources */,
+				9EAB419020F1030000770F7C /* PhotoshootTypePopupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

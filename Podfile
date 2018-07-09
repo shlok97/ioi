@@ -25,6 +25,7 @@ pod 'Segmentio', '~> 3.0'
 pod 'EMAlertController'
 pod 'LGButton'
 pod 'QRCodeReader.swift', '~> 8.2.0'
+pod "SwiftRangeSlider"
 end
 
 post_install do |installer|

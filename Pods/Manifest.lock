@@ -3,15 +3,16 @@ PODS:
   - EMAlertController (1.0.1)
   - FoldingCell (3.1.1)
   - LGButton (1.0.5)
-  - Material (2.16.0):
-    - Material/Core (= 2.16.0)
-  - Material/Core (2.16.0):
+  - Material (2.16.1):
+    - Material/Core (= 2.16.1)
+  - Material/Core (2.16.1):
     - Motion (~> 1.4.2)
   - Motion (1.4.2):
     - Motion/Core (= 1.4.2)
   - Motion/Core (1.4.2)
   - QRCodeReader.swift (8.2.0)
   - Segmentio (3.0)
+  - SwiftRangeSlider (2.0.0)
 
 DEPENDENCIES:
   - ElongationPreview (~> 1.1)
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - Material (~> 2.0)
   - QRCodeReader.swift (~> 8.2.0)
   - Segmentio (~> 3.0)
+  - SwiftRangeSlider
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -32,17 +34,19 @@ SPEC REPOS:
     - Motion
     - QRCodeReader.swift
     - Segmentio
+    - SwiftRangeSlider
 
 SPEC CHECKSUMS:
   ElongationPreview: a1b53f61d2086c0ce5c2061e5233bff25b93917d
   EMAlertController: db945aa666b737b86b0d22c9ee464e552fc63bb8
   FoldingCell: 238c33ae8d9cd655090c9c4c5ff32596cfd18c6e
   LGButton: 707ce916eb80b73a6c4688df34bee11adbafb663
-  Material: 6a85db48e092012f98704eb085852124f64b07af
+  Material: d185e76761ad1bad80d2212e2ea4d84470087691
   Motion: 93605fd4dffe44203b56949eb0bc73a9521af7b6
   QRCodeReader.swift: 003eb32f18a5a675b936ec82ba0ff368cddbff45
   Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
+  SwiftRangeSlider: f86e3b637c961120158fa1a89277c8343845cbe4
 
-PODFILE CHECKSUM: b9433f3e2e92d5b8ffdcc84e4087db07a6de4452
+PODFILE CHECKSUM: 8b5f1804fa7ae3784147c99d534fef2b02c1601c
 
 COCOAPODS: 1.5.0

@@ -1719,69 +1719,7 @@
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0a8-1r-gGG">
                                         <rect key="frame" x="0.0" y="-8" width="375" height="507"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4I-b5-4Lf" customClass="CardView" customModule="ioi" customModuleProvider="target">
-                                                <rect key="frame" x="54" y="153" width="267" height="200"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHOOSE PHOTOSHOOT TYPE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNc-Tp-iTK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="42"/>
-                                                        <color key="backgroundColor" red="0.20784313725490197" green="0.4392156862745098" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="42" id="HYv-jh-AQg"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT1-HV-FmQ" customClass="LGButton" customModule="LGButton">
-                                                        <rect key="frame" x="0.0" y="160" width="267" height="40"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="OMU-pU-xR3"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
-                                                                <color key="value" cyan="0.77000308036804199" magenta="0.43137663602828979" yellow="0.1743772029876709" black="0.32564988273055584" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
-                                                                <color key="value" cyan="0.90379214286804199" magenta="0.1518627471394009" yellow="0.1743772029876709" black="0.40385514814151474" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="DONE"/>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
-                                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="donePhotoshootSelection:" destination="eky-OG-AxF" eventType="touchUpInside" id="GGJ-dl-XqI"/>
-                                                        </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3f-qi-AI6" customClass="PhotoshootTypeSegmentioPopup" customModule="ioi" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="42" width="267" height="118"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </view>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstItem="P3f-qi-AI6" firstAttribute="top" secondItem="gNc-Tp-iTK" secondAttribute="bottom" id="Hss-vB-HLP"/>
-                                                    <constraint firstItem="gNc-Tp-iTK" firstAttribute="leading" secondItem="z4I-b5-4Lf" secondAttribute="leading" id="P9P-sM-Fxy"/>
-                                                    <constraint firstAttribute="height" constant="200" id="Pzb-qP-9tx"/>
-                                                    <constraint firstAttribute="width" constant="267" id="Rl5-g7-0aX"/>
-                                                    <constraint firstAttribute="trailing" secondItem="kT1-HV-FmQ" secondAttribute="trailing" id="Yet-2s-2OB"/>
-                                                    <constraint firstItem="kT1-HV-FmQ" firstAttribute="top" secondItem="P3f-qi-AI6" secondAttribute="bottom" id="cZa-uC-QJt"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gNc-Tp-iTK" secondAttribute="trailing" id="edS-b5-pEo"/>
-                                                    <constraint firstAttribute="bottom" secondItem="kT1-HV-FmQ" secondAttribute="bottom" id="g7e-ci-t5f"/>
-                                                    <constraint firstAttribute="trailing" secondItem="P3f-qi-AI6" secondAttribute="trailing" id="l9G-0P-jzN"/>
-                                                    <constraint firstItem="kT1-HV-FmQ" firstAttribute="leading" secondItem="z4I-b5-4Lf" secondAttribute="leading" id="m9p-lf-JYn"/>
-                                                    <constraint firstItem="P3f-qi-AI6" firstAttribute="leading" secondItem="z4I-b5-4Lf" secondAttribute="leading" id="s04-HX-Dmv"/>
-                                                    <constraint firstItem="gNc-Tp-iTK" firstAttribute="top" secondItem="z4I-b5-4Lf" secondAttribute="top" id="ykZ-h0-NIl"/>
-                                                </constraints>
-                                            </view>
-                                        </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstItem="z4I-b5-4Lf" firstAttribute="centerY" secondItem="0a8-1r-gGG" secondAttribute="centerY" id="5dc-Yd-xDD"/>
-                                            <constraint firstItem="z4I-b5-4Lf" firstAttribute="centerX" secondItem="0a8-1r-gGG" secondAttribute="centerX" id="OV8-qc-9rK"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1829,7 +1767,6 @@
                         <outlet property="darkView" destination="0a8-1r-gGG" id="QAT-5r-7hZ"/>
                         <outlet property="photoshootTypeSegmentioView" destination="xcz-7f-X9J" id="B23-6m-fWa"/>
                         <outlet property="scrollView" destination="y8D-lL-8UH" id="Xk4-N8-zq3"/>
-                        <outlet property="segmentioView" destination="P3f-qi-AI6" id="mwR-JE-J1P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egH-Q6-kX0" userLabel="First Responder" sceneMemberID="firstResponder"/>

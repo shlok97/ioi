@@ -10,7 +10,16 @@ import UIKit
 import Segmentio
 import LGButton
 
-class BookViewController: UIViewController {
+class BookViewController: UIViewController, PhotoshootTypePopupViewDelegate {
+    
+    func changedPhotoshootCategory(_ index: Int) {
+        self.photoshootTypeSegmentioView.selectedSegmentioIndex = index
+    }
+    
+    func continueButtonTapped() {
+        self.darkView.alpha = 0
+    }
+    
 
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var cardView: CardView!
@@ -18,12 +27,6 @@ class BookViewController: UIViewController {
 
     @IBOutlet var darkView: UIView!
     @IBOutlet var photoshootTypeSegmentioView: PhotoshootTypeSegmentio!
-    @IBOutlet var segmentioView: PhotoshootTypeSegmentioPopup!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -31,19 +34,14 @@ class BookViewController: UIViewController {
         setupSegmentioView()
         setupOnboardingSegmentioView()
     }
-
-    @IBAction func donePhotoshootSelection(_ sender: LGButton) {
-        UIView.animate(withDuration: 0.3) {
-            self.darkView.alpha = 0
-        }
-    }
     
     func setupOnboardingSegmentioView() {
         self.darkView.alpha = 1
         darkView.backgroundColor = UIColor(hexString: "#000000", alpha: 0.5)
-
-        segmentioView.valueDidChange = { segmentio, segmentIndex in
-            self.photoshootTypeSegmentioView.selectedSegmentioIndex = segmentIndex
+        if let view = Bundle.main.loadNibNamed("PhotoshootTypePopupView", owner: self, options: nil)?.first as? PhotoshootTypePopupView {
+            view.delegate = self
+            view.frame = self.popupFrame
+            self.darkView.addSubview(view)
         }
     }
     
@@ -63,9 +61,7 @@ class BookViewController: UIViewController {
     }
     
     @objc func showPopup() {
-        UIView.animate(withDuration: 0.3) {
-            self.darkView.alpha = 1
-        }
+        self.darkView.alpha = 1
     }
     
     @objc func setupPhotoGrid() {
@@ -100,5 +96,17 @@ class BookViewController: UIViewController {
     
     @objc func tap(pictureView: PhotoGridPictureView) {
         pictureView.toggle()
+    }
+}
+
+extension BookViewController {
+    var popupFrame: CGRect {
+        let width: CGFloat = 300
+        let height: CGFloat = 200
+        let centerX = self.darkView.frame.width/2
+        let centerY = self.darkView.frame.height/2
+        let x = centerX - width/2
+        let y = centerY - height/2
+        return CGRect(x: x, y: y, width: width, height: height)
     }
 }
