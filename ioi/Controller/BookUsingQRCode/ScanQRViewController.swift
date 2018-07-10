@@ -24,7 +24,7 @@ class ScanQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     @IBOutlet var recentPhotographerName: [UILabel]!
     @IBOutlet var continueButton: LGButton!
     @IBOutlet var mobileNumberTextField: TextField!
-    
+    @IBOutlet var continueBottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,13 +34,19 @@ class ScanQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         hideKeyboardWhenTappedAround()
     }
     
-    @IBAction func enteringMobileNumber(_ sender: Any) {
+    @IBAction func doneEnteringMobileNumber(_ sender: Any) {
         if mobileNumberTextField.text != "" {
             continueButton.isHidden = false
         } else {
             continueButton.isHidden = true
         }
     }
+    
+    @IBAction func mobileEditingBegan(_ sender: Any) {
+        continueButton.isHidden = false
+    }
+    
+    
     @IBAction func continueButtonTapped(_ sender: Any) {
         scanSuccessful()
     }
@@ -49,6 +55,7 @@ class ScanQRViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         setupCameraView()
         setupQRScanner()
         setRecentPhotographers()
+        setNotifications()
     }
     
     func setRecentPhotographers() {
@@ -146,5 +153,34 @@ extension ScanQRViewController {
                 scanSuccessful()
             }
         }
+    }
+}
+
+
+//code to move the coninue button
+extension ScanQRViewController {
+    
+    func setNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)),
+                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    //MARK: - getKayboardHeight
+    @objc func keyboardWillShow(notification: Notification) {
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        // do whatever you want with this keyboard height
+        UIView.animate(withDuration: 0.5) {
+            self.continueBottom.constant = keyboardHeight - 85
+        }
+        
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        // keyboard is dismissed/hidden from the screen
+       continueBottom.constant = 0
     }
 }
