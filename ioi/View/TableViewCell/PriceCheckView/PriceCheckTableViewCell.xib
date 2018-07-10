@@ -46,12 +46,12 @@
                             <constraint firstAttribute="height" constant="40" id="8Al-W9-Jzo"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="SHORTLIST"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="titleString" value="ADD TO SHORTLIST"/>
                             <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
-                                <color key="value" red="1" green="0.68572618402940955" blue="0.35839185447169086" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="value" red="0.2627450980392157" green="0.50196078431372548" blue="0.64313725490196072" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
-                                <color key="value" red="1" green="0.62127147189372667" blue="0.18417018949319663" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="value" red="0.21176470588235294" green="0.41960784313725491" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="titleFontSize">
                                 <real key="value" value="15"/>
@@ -60,6 +60,9 @@
                                 <real key="value" value="6"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="shortlistButtonTapped:" destination="Bya-XK-shU" eventType="touchUpInside" id="Quo-ix-y9e"/>
+                        </connections>
                     </view>
                 </subviews>
                 <constraints>

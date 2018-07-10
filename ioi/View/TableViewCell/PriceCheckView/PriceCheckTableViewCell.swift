@@ -10,6 +10,11 @@ import UIKit
 import Material
 import LGButton
 
+struct LGButtonColor {
+    var gradientStart: UIColor
+    var gradientEnd: UIColor
+}
+
 class PriceCheckTableViewCell: TableViewCell, UIScrollViewDelegate {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var feeLabel: UILabel!
@@ -20,22 +25,40 @@ class PriceCheckTableViewCell: TableViewCell, UIScrollViewDelegate {
     
     var _isShortlisted = false
     
-    @objc func toggle() {
+    let addToShortlistColor = LGButtonColor(gradientStart: UIColor(hexString: "#FFAF5B"), gradientEnd: UIColor(hexString: "#FF9E2F"))
+    
+    let removeFromShortlistColor = LGButtonColor(gradientStart: UIColor(hexString: "#4380A4"), gradientEnd: UIColor(hexString: "#366B97"))
+    
+    func toggle() {
         if _isShortlisted {
-            shortlistButton.titleString = "SHORTLIST"
             _isShortlisted = false
         }
         else {
-            shortlistButton.titleString = "REMOVE FROM SHORTLIST"
             _isShortlisted = true
         }
-        UIView.animate(withDuration: 0.15) {
-            if self.isShortlisted {
-                self.darkView.alpha = 0.7
-                return
-            }
-            self.darkView.alpha = 0
+        
+        setShortlistButton()
+    }
+    
+    func setShortlistButton() {
+        
+        if _isShortlisted {
+            shortlistButton.titleString = "REMOVE FROM SHORTLIST"
+            
+            shortlistButton.gradientEndColor = removeFromShortlistColor.gradientEnd
+            shortlistButton.gradientStartColor = removeFromShortlistColor.gradientStart
+            
+            
         }
+        else {
+            shortlistButton.titleString = "ADD TO SHORTLIST"
+            shortlistButton.gradientEndColor = addToShortlistColor.gradientEnd
+            shortlistButton.gradientStartColor = addToShortlistColor.gradientStart
+        }
+    }
+    
+    @IBAction func shortlistButtonTapped(_ sender: Any) {
+        toggle()
     }
     
     var isShortlisted: Bool {
@@ -43,15 +66,10 @@ class PriceCheckTableViewCell: TableViewCell, UIScrollViewDelegate {
     }
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         self.clipsToBounds = true
-        darkView.alpha = 0
-        darkView.backgroundColor = .clear
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(toggle))
-        tap.numberOfTapsRequired = 1
-        self.addGestureRecognizer(tap)
-        
-        shortlistButton.addTarget(self, action: #selector(toggle), for: .touchUpInside)
+        setShortlistButton()
     }
     
     func setupCell() {
