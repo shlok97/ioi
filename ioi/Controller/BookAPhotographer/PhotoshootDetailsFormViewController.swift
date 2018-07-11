@@ -91,7 +91,18 @@ class PhotoshootDetailsFormViewController: UIViewController, DateTimePickerDeleg
     }
 
     @IBAction func changeDate(_ sender: Any) {
-        showDateTimePicker(picker: &picker)
+        
+        let actionSheet = UIAlertController(title: "Change Date", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        actionSheet.addAction(UIAlertAction(title: "Start Date", style: UIAlertActionStyle.default, handler: { (action) in
+            self.showDateTimePicker(picker: &self.picker)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "End Date", style: UIAlertActionStyle.default, handler: { (action) in
+            self.showDateTimePicker(picker: &self.endDatePicker)
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: { (action) in
+            
+        }))
+        self.present(actionSheet, animated: true, completion: nil)
     }
     
     @IBAction func changeDuration(_ sender: Any) {
